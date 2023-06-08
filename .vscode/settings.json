@@ -1,0 +1,5 @@
+{
+    "dataworkspace.excludedProjects": [
+        "attempt2AZURE/attempt2AZURE.sqlproj"
+    ]
+}

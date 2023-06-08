@@ -2,8 +2,8 @@
 <Project DefaultTargets="Build">
   <Sdk Name="Microsoft.Build.Sql" Version="0.1.9-preview" />
   <PropertyGroup>
-    <Name>attempt2AZURE</Name>
-    <ProjectGuid>{DAD981CD-14FB-4B3D-AD0D-6C76637F0514}</ProjectGuid>
+    <Name>azureLocalTEST</Name>
+    <ProjectGuid>{E6A2B293-CA65-418A-957E-BFCAAD322623}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
     <ModelCollation>1033, CI</ModelCollation>
   </PropertyGroup>

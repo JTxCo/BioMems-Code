@@ -1,9 +1,0 @@
-/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/attempt2AZURE/bin/Debug/attempt2AZURE.dacpac
-/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/attempt2AZURE/bin/Debug/attempt2AZURE.dll
-/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/attempt2AZURE/bin/Debug/attempt2AZURE.pdb
-/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/attempt2AZURE/obj/Debug/Model.xml
-/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/attempt2AZURE/obj/Debug/refactor.xml
-/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/attempt2AZURE/obj/Debug/postdeploy.sql
-/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/attempt2AZURE/obj/Debug/predeploy.sql
-/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/attempt2AZURE/obj/Debug/attempt2AZURE.dll
-/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/attempt2AZURE/obj/Debug/attempt2AZURE.pdb

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "6xE8PKZp1UBTldGZs3FhN10P3ymZoEHTTyti9HA8usfbBamFkUi0h7brtsONXQhPTDGE4nZXMwgOKEPfxYakyA==",
+  "success": true,
+  "projectFilePath": "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/attempt2AZURE/attempt2AZURE.sqlproj",
+  "expectedPackageFiles": [
+    "/Users/joelcarlson/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.0/microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "/Users/joelcarlson/.nuget/packages/microsoft.netframework.referenceassemblies.net46/1.0.0/microsoft.netframework.referenceassemblies.net46.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

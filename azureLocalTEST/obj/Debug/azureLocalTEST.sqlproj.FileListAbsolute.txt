@@ -1,0 +1,9 @@
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalTEST/bin/Debug/azureLocalTEST.dacpac
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalTEST/bin/Debug/azureLocalTEST.dll
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalTEST/bin/Debug/azureLocalTEST.pdb
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalTEST/obj/Debug/Model.xml
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalTEST/obj/Debug/refactor.xml
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalTEST/obj/Debug/postdeploy.sql
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalTEST/obj/Debug/predeploy.sql
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalTEST/obj/Debug/azureLocalTEST.dll
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalTEST/obj/Debug/azureLocalTEST.pdb

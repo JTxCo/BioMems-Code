@@ -368,11 +368,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalTEST/azureLocalTEST.sqlproj",
+      "projectUniqueName": "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/azureLocalTEST.sqlproj",
       "projectName": "azureLocalTEST",
-      "projectPath": "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalTEST/azureLocalTEST.sqlproj",
+      "projectPath": "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/azureLocalTEST.sqlproj",
       "packagesPath": "/Users/joelcarlson/.nuget/packages/",
-      "outputPath": "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalTEST/obj/",
+      "outputPath": "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [

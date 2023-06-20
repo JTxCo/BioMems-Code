@@ -1,0 +1,50 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/BIOMEMS-local/BIOMEMS-local.sqlproj": {}
+  },
+  "projects": {
+    "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/BIOMEMS-local/BIOMEMS-local.sqlproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/BIOMEMS-local/BIOMEMS-local.sqlproj",
+        "projectName": "BIOMEMS-local",
+        "projectPath": "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/BIOMEMS-local/BIOMEMS-local.sqlproj",
+        "packagesPath": "/Users/joelcarlson/.nuget/packages/",
+        "outputPath": "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/BIOMEMS-local/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/joelcarlson/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net46"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net46": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU5128"
+          ]
+        }
+      },
+      "frameworks": {
+        "net46": {
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}

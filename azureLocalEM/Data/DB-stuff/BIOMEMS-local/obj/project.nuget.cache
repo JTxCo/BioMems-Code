@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "N+zUKqoD7YBGI0d4h9T5CNVy6BNK8iQ1O/h1KihPwYm/Kj5bUJ2Co8Zd2sT93yvddpT7yFTvz1GKRHtbkz5ckg==",
+  "success": true,
+  "projectFilePath": "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/BIOMEMS-local/BIOMEMS-local.sqlproj",
+  "expectedPackageFiles": [
+    "/Users/joelcarlson/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.0/microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "/Users/joelcarlson/.nuget/packages/microsoft.netframework.referenceassemblies.net46/1.0.0/microsoft.netframework.referenceassemblies.net46.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

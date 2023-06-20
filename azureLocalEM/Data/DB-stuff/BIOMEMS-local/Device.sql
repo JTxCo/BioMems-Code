@@ -3,9 +3,9 @@ CREATE TABLE [dbo].[Device]
   [instrumentID]  varchar(13) NOT NULL PRIMARY KEY,
   [errorServiceCode] varchar(8),
   [patientID] INT NOT NULL,
-  FOREIGN KEY (patientID) REFERENCES Patient(patientID),
+  CONSTRAINT [FK_Device_Patient] FOREIGN KEY ([patientID]) REFERENCES [dbo].[Patient]([patientID]),
   [GSID] VARCHAR(13) NOT NULL,
-  FOREIGN KEY (GSID) REFERENCES Catridge(GSID),
+  constraint [FK_Device_GSID] foreign key ([GSID]) references [dbo].[Catridge]([GSID]),
   [test_ID] INT NOT NULL,
-  FOREIGN KEY (test_ID) REFERENCES Test(test_ID),
+  CONSTRAINT [FK_Device_test_ID] FOREIGN KEY ([test_ID]) REFERENCES [dbo].[Test]([test_ID])
 )

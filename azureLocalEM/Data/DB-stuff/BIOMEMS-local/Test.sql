@@ -1,6 +1,7 @@
 CREATE TABLE [dbo].[Test]
 (
   [test_ID] INT NOT NULL PRIMARY KEY IDENTITY,
+  [operatorID] VARCHAR(13) NOT NULL,
   [fluid_ID] INT NOT NULL,
   CONSTRAINT [FK_Test_Fluid_ID] FOREIGN KEY ([fluid_ID]) REFERENCES [dbo].[Fluid_Method]([fluid_ID]),
   [calibration_ID] INT NOT NULL,

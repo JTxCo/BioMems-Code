@@ -1,7 +1,7 @@
 CREATE TABLE [dbo].[TestTime]
 (
   [time_ID] INT NOT NULL PRIMARY KEY IDENTITY,
-  [date] DATE NOT NULL,
-  [time] TIME NOT NULL,
+  [Date] DATE NOT NULL,
+  [Time] TIME NOT NULL,
   [TimeZone] VARCHAR(1) NOT NULL,
 )

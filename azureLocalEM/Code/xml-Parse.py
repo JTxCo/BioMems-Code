@@ -7,7 +7,9 @@ tree = ET.parse('../Data/BioMems-XML-example.xml')
 root = tree.getroot()
 # It erate over child elements
 sampleData = root.find('./sampleData')
-for well in sampleData.findall('*'):
+well = sampleData.find('./well1Data')
+# for well in sampleData.findall('*'):
+if well is not None:
     print(well.tag)
     print('  Well Data:', well.text)
     
@@ -16,11 +18,12 @@ for well in sampleData.findall('*'):
     for data in info.findall('*'):
         print('    ', data.tag, data.text)
         
-    samples = well.find('./sample')
+    samples = well.findall('./sample/*')
     print('  Samples:')
-    for data in samples.findall('*'):
-        print('    ', data.tag, data.text)
+    for sample in samples:
+        print('    ', sample.tag, sample.text)
         
+    print('\n')
     print()
 
     

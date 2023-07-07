@@ -9,5 +9,5 @@ CREATE TABLE [dbo].[Test]
   [time_ID] INT NOT NULL,
   CONSTRAINT [FK_Test_Time_ID] FOREIGN KEY ([time_ID]) REFERENCES [dbo].[TestTime]([time_ID]),
   [well_reference_ID] INT NOT NULL,
-  CONSTRAINT [FK_Test_Well_Reference_ID] FOREIGN KEY ([well_reference_ID]) REFERENCES [dbo].[Well_reference]([well_reference_ID]),
+  CONSTRAINT [FK_Test_Well_Reference_ID] FOREIGN KEY ([well_reference_ID]) REFERENCES [dbo].[Well_Reference]([well_reference_ID]),
 )

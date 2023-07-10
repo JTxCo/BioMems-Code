@@ -8,7 +8,7 @@ app = func.FunctionApp()
 def test_function(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
-    name = req.params.get('name')
+    name = req.params.get('teting')
     if not name:
         try:
             req_body = req.get_json()

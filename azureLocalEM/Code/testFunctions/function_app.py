@@ -1,30 +1,32 @@
 import azure.functions as func
 import logging
-import xml.etree.ElementTree as ET
+import json
 
 app = func.FunctionApp()
-@app.function_name(name="HttpTrigger1")
-@app.route(route="hello", auth_level=func.AuthLevel.ANONYMOUS)
+
+@app.function_name("HttpTrigger1")
+@app.route("hello", methods=["POST"], auth_level=func.AuthLevel.ANONYMOUS)
 def test_function(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
-
-    name = req.params.get('teting')
-    if not name:
-        try:
-            req_body = req.get_json()
-        except ValueError:
-            pass
-        else:
-            name = req_body.get('name')
-
-    if name:
-        return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
-    else:
+    try:
+        json_data = req.get_json()
+        if json_data is None:
+            logging.info("No JSON data found.")
+            return func.HttpResponse(
+                "Please provide valid JSON data.",
+                status_code=400
+            )
+        
+        # Process the JSON data here as needed
+        # You can access individual fields using json_data['field_name']
+        logging.info(f"Received JSON data: {json_data}")
+        for item in json_data['patientInfo']:
+            logging.info(f"Item: {item}")  
+        return func.HttpResponse("JSON data processed successfully.", status_code=200)
+    except Exception as e:
+        logging.info("Error processing JSON data.")
+        logging.error(str(e))
         return func.HttpResponse(
-            "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
-            status_code=200
+            "Error processing JSON data.",
+            status_code=500
         )
-
-def parse_xml(xml_string):
-    root = ET.fromstring(xml_string)
-    return root

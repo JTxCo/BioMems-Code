@@ -1,0 +1,775 @@
+{
+    "data": {
+        "versionInfo": {
+            "version": "1"
+        },
+        "packetInfo": {
+            "cartridgeInfo": {
+                "GSID": "0000000000017",
+                "assayName": "bloodTest2023"
+            },
+            "fluidMethodInfo": {
+                "sampleName": "blood",
+                "methodName": "ljenkinsMethod1",
+                "eChemName": "phosphatase",
+                "washName": "solventMix",
+                "incubationTime": "1"
+            },
+            "patientInfo": {
+                "patientID": "abcdefghijklm",
+                "patientName": "Leslie Nielsen",
+                "patientDOB": "1926.02.11"
+            },
+            "dateTime": {
+                "date": "2023.05.27",
+                "time": "6:3:47",
+                "timeZone": "-5"
+            },
+            "scanInfo": {
+                "operatorID": "00000jmkapala"
+            },
+            "calibrationSettings": {
+                "dacOffset": "0x10",
+                "dacGain": "0x800000",
+                "voltageOffset": "0",
+                "currentOffset": "0",
+                "shunt1Cal": "1000000",
+                "shunt2Cal": "1000000",
+                "shunt3Cal": "1000000",
+                "rangeSelect": "2"
+            },
+            "deviceInfo": {
+                "instrumentID": "1000000000000",
+                "errorServiceCode": "E000S000"
+            }
+        },
+        "algorithmInfo": {
+            "algorithmVersion": "1"
+        },
+        "sampleInfo": {
+            "sampleVersion": "1"
+        },
+        "sampleData": {
+            "well1Data": {
+                "info": {
+                    "sampleFormat": "1",
+                    "samplesTotal": "9",
+                    "wellRange": "250 uA"
+                },
+                "sample": [
+                    {
+                        "time": "2002",
+                        "voltageH": "498954",
+                        "currentH": "0",
+                        "voltageL": "298984",
+                        "currentL": "29857"
+                    },
+                    {
+                        "time": "2249",
+                        "voltageH": "398990",
+                        "currentH": "39830",
+                        "voltageL": "199012",
+                        "currentL": "19883"
+                    },
+                    {
+                        "time": "2428",
+                        "voltageH": "298984",
+                        "currentH": "29853",
+                        "voltageL": "99029",
+                        "currentL": "9910"
+                    },
+                    {
+                        "time": "2607",
+                        "voltageH": "199012",
+                        "currentH": "19883",
+                        "voltageL": "-846",
+                        "currentL": "-51"
+                    },
+                    {
+                        "time": "2786",
+                        "voltageH": "99044",
+                        "currentH": "9908",
+                        "voltageL": "-100944",
+                        "currentL": "-10036"
+                    },
+                    {
+                        "time": "2965",
+                        "voltageH": "-888",
+                        "currentH": "-53",
+                        "voltageL": "-200939",
+                        "currentL": "-20008"
+                    },
+                    {
+                        "time": "3144",
+                        "voltageH": "-100959",
+                        "currentH": "-10036",
+                        "voltageL": "-300884",
+                        "currentL": "-29978"
+                    },
+                    {
+                        "time": "3323",
+                        "voltageH": "-200973",
+                        "currentH": "-20011",
+                        "voltageL": "-400886",
+                        "currentL": "-39953"
+                    },
+                    {
+                        "time": "3502",
+                        "voltageH": "-300930",
+                        "currentH": "-29981",
+                        "voltageL": "-500785",
+                        "currentL": "-49916"
+                    }
+                ]
+            },
+            "well2Data": {
+                "info": {
+                    "sampleFormat": "1",
+                    "samplesTotal": "9",
+                    "wellRange": "250 uA"
+                },
+                "sample": [
+                    {
+                        "time": "2002",
+                        "voltageH": "498935",
+                        "currentH": "49590",
+                        "voltageL": "298969",
+                        "currentL": "29731"
+                    },
+                    {
+                        "time": "2181",
+                        "voltageH": "399021",
+                        "currentH": "39661",
+                        "voltageL": "199054",
+                        "currentL": "19800"
+                    },
+                    {
+                        "time": "2360",
+                        "voltageH": "298980",
+                        "currentH": "29728",
+                        "voltageL": "99021",
+                        "currentL": "9869"
+                    },
+                    {
+                        "time": "2539",
+                        "voltageH": "198978",
+                        "currentH": "19797",
+                        "voltageL": "-919",
+                        "currentL": "-52"
+                    },
+                    {
+                        "time": "2718",
+                        "voltageH": "99018",
+                        "currentH": "9865",
+                        "voltageL": "-100936",
+                        "currentL": "-9994"
+                    },
+                    {
+                        "time": "2897",
+                        "voltageH": "-854",
+                        "currentH": "-53",
+                        "voltageL": "-200920",
+                        "currentL": "-19925"
+                    },
+                    {
+                        "time": "3076",
+                        "voltageH": "-100952",
+                        "currentH": "-9994",
+                        "voltageL": "-300899",
+                        "currentL": "-29853"
+                    },
+                    {
+                        "time": "3255",
+                        "voltageH": "-200996",
+                        "currentH": "-19929",
+                        "voltageL": "-400924",
+                        "currentL": "-39788"
+                    },
+                    {
+                        "time": "3434",
+                        "voltageH": "-300922",
+                        "currentH": "-29858",
+                        "voltageL": "-500778",
+                        "currentL": "-49708"
+                    }
+                ]
+            },
+            "well3Data": {
+                "info": {
+                    "sampleFormat": "1",
+                    "samplesTotal": "9",
+                    "wellRange": "250 uA"
+                },
+                "sample": [
+                    {
+                        "time": "2002",
+                        "voltageH": "498970",
+                        "currentH": "49805",
+                        "voltageL": "299011",
+                        "currentL": "29858"
+                    },
+                    {
+                        "time": "2181",
+                        "voltageH": "398998",
+                        "currentH": "39836",
+                        "voltageL": "198959",
+                        "currentL": "19885"
+                    },
+                    {
+                        "time": "2360",
+                        "voltageH": "298919",
+                        "currentH": "29858",
+                        "voltageL": "99006",
+                        "currentL": "9914"
+                    },
+                    {
+                        "time": "2539",
+                        "voltageH": "198997",
+                        "currentH": "19887",
+                        "voltageL": "-919",
+                        "currentL": "-48"
+                    },
+                    {
+                        "time": "2718",
+                        "voltageH": "99010",
+                        "currentH": "9912",
+                        "voltageL": "-100978",
+                        "currentL": "-10039"
+                    },
+                    {
+                        "time": "2897",
+                        "voltageH": "-885",
+                        "currentH": "-52",
+                        "voltageL": "-200946",
+                        "currentL": "-20014"
+                    },
+                    {
+                        "time": "3076",
+                        "voltageH": "-100959",
+                        "currentH": "-10040",
+                        "voltageL": "-300903",
+                        "currentL": "-29985"
+                    },
+                    {
+                        "time": "3255",
+                        "voltageH": "-200939",
+                        "currentH": "-20012",
+                        "voltageL": "-400894",
+                        "currentL": "-39960"
+                    },
+                    {
+                        "time": "3435",
+                        "voltageH": "-300914",
+                        "currentH": "-29989",
+                        "voltageL": "-500785",
+                        "currentL": "-49923"
+                    }
+                ]
+            },
+            "well4Data": {
+                "info": {
+                    "sampleFormat": "1",
+                    "samplesTotal": "9",
+                    "wellRange": "250 uA"
+                },
+                "sample": [
+                    {
+                        "time": "2002",
+                        "voltageH": "498916",
+                        "currentH": "49931",
+                        "voltageL": "299022",
+                        "currentL": "29935"
+                    },
+                    {
+                        "time": "2181",
+                        "voltageH": "398944",
+                        "currentH": "39931",
+                        "voltageL": "199050",
+                        "currentL": "19939"
+                    },
+                    {
+                        "time": "2360",
+                        "voltageH": "298942",
+                        "currentH": "29933",
+                        "voltageL": "99060",
+                        "currentL": "9939"
+                    },
+                    {
+                        "time": "2539",
+                        "voltageH": "198993",
+                        "currentH": "19937",
+                        "voltageL": "-900",
+                        "currentL": "-52"
+                    },
+                    {
+                        "time": "2718",
+                        "voltageH": "99033",
+                        "currentH": "9937",
+                        "voltageL": "-100955",
+                        "currentL": "-10060"
+                    },
+                    {
+                        "time": "2897",
+                        "voltageH": "-881",
+                        "currentH": "-52",
+                        "voltageL": "-200973",
+                        "currentL": "-20060"
+                    },
+                    {
+                        "time": "3076",
+                        "voltageH": "-100982",
+                        "currentH": "-10065",
+                        "voltageL": "-300888",
+                        "currentL": "-30054"
+                    },
+                    {
+                        "time": "3255",
+                        "voltageH": "-200969",
+                        "currentH": "-20061",
+                        "voltageL": "-400886",
+                        "currentL": "-40058"
+                    },
+                    {
+                        "time": "3434",
+                        "voltageH": "-300880",
+                        "currentH": "-30057",
+                        "voltageL": "-500766",
+                        "currentL": "-50044"
+                    }
+                ]
+            },
+            "well5Data": {
+                "info": {
+                    "sampleFormat": "1",
+                    "samplesTotal": "9",
+                    "wellRange": "250 uA"
+                },
+                "sample": [
+                    {
+                        "time": "2002",
+                        "voltageH": "498924",
+                        "currentH": "49750",
+                        "voltageL": "298965",
+                        "currentL": "29825"
+                    },
+                    {
+                        "time": "2181",
+                        "voltageH": "398975",
+                        "currentH": "39791",
+                        "voltageL": "199005",
+                        "currentL": "19865"
+                    },
+                    {
+                        "time": "2360",
+                        "voltageH": "298927",
+                        "currentH": "29824",
+                        "voltageL": "99079",
+                        "currentL": "9905"
+                    },
+                    {
+                        "time": "2539",
+                        "voltageH": "198959",
+                        "currentH": "19865",
+                        "voltageL": "-862",
+                        "currentL": "-50"
+                    },
+                    {
+                        "time": "2718",
+                        "voltageH": "98991",
+                        "currentH": "9900",
+                        "voltageL": "-100978",
+                        "currentL": "-10026"
+                    },
+                    {
+                        "time": "2897",
+                        "voltageH": "-862",
+                        "currentH": "-50",
+                        "voltageL": "-200962",
+                        "currentL": "-19988"
+                    },
+                    {
+                        "time": "3076",
+                        "voltageH": "-101020",
+                        "currentH": "-10029",
+                        "voltageL": "-300933",
+                        "currentL": "-29951"
+                    },
+                    {
+                        "time": "3255",
+                        "voltageH": "-200935",
+                        "currentH": "-19988",
+                        "voltageL": "-400917",
+                        "currentL": "-39912"
+                    },
+                    {
+                        "time": "3434",
+                        "voltageH": "-300930",
+                        "currentH": "-29952",
+                        "voltageL": "-500782",
+                        "currentL": "-49865"
+                    }
+                ]
+            },
+            "well6Data": {
+                "info": {
+                    "sampleFormat": "1",
+                    "samplesTotal": "9",
+                    "wellRange": "250 uA"
+                },
+                "sample": [
+                    {
+                        "time": "2002",
+                        "voltageH": "498920",
+                        "currentH": "49700",
+                        "voltageL": "298919",
+                        "currentL": "29796"
+                    },
+                    {
+                        "time": "2181",
+                        "voltageH": "398937",
+                        "currentH": "39747",
+                        "voltageL": "199001",
+                        "currentL": "19845"
+                    },
+                    {
+                        "time": "2360",
+                        "voltageH": "298904",
+                        "currentH": "29791",
+                        "voltageL": "98995",
+                        "currentL": "9892"
+                    },
+                    {
+                        "time": "2539",
+                        "voltageH": "198959",
+                        "currentH": "19843",
+                        "voltageL": "-877",
+                        "currentL": "-48"
+                    },
+                    {
+                        "time": "2718",
+                        "voltageH": "98979",
+                        "currentH": "9889",
+                        "voltageL": "-100955",
+                        "currentL": "-10017"
+                    },
+                    {
+                        "time": "2897",
+                        "voltageH": "-881",
+                        "currentH": "-52",
+                        "voltageL": "-200923",
+                        "currentL": "-19968"
+                    },
+                    {
+                        "time": "3076",
+                        "voltageH": "-100986",
+                        "currentH": "-10018",
+                        "voltageL": "-300888",
+                        "currentL": "-29923"
+                    },
+                    {
+                        "time": "3255",
+                        "voltageH": "-201000",
+                        "currentH": "-19971",
+                        "voltageL": "-400894",
+                        "currentL": "-39874"
+                    },
+                    {
+                        "time": "3435",
+                        "voltageH": "-300975",
+                        "currentH": "-29926",
+                        "voltageL": "-500785",
+                        "currentL": "-49817"
+                    }
+                ]
+            },
+            "well7Data": {
+                "info": {
+                    "sampleFormat": "1",
+                    "samplesTotal": "9",
+                    "wellRange": "250 uA"
+                },
+                "sample": [
+                    {
+                        "time": "2002",
+                        "voltageH": "498901",
+                        "currentH": "4",
+                        "voltageL": "298992",
+                        "currentL": "3"
+                    },
+                    {
+                        "time": "2181",
+                        "voltageH": "399002",
+                        "currentH": "4",
+                        "voltageL": "199077",
+                        "currentL": "2"
+                    },
+                    {
+                        "time": "2360",
+                        "voltageH": "299037",
+                        "currentH": "2",
+                        "voltageL": "99052",
+                        "currentL": "3"
+                    },
+                    {
+                        "time": "2539",
+                        "voltageH": "199028",
+                        "currentH": "3",
+                        "voltageL": "-831",
+                        "currentL": "4"
+                    },
+                    {
+                        "time": "2718",
+                        "voltageH": "99021",
+                        "currentH": "3",
+                        "voltageL": "-100971",
+                        "currentL": "4"
+                    },
+                    {
+                        "time": "2897",
+                        "voltageH": "-877",
+                        "currentH": "3",
+                        "voltageL": "-200954",
+                        "currentL": "3"
+                    },
+                    {
+                        "time": "3076",
+                        "voltageH": "-100975",
+                        "currentH": "2",
+                        "voltageL": "-300899",
+                        "currentL": "1"
+                    },
+                    {
+                        "time": "3255",
+                        "voltageH": "-200977",
+                        "currentH": "3",
+                        "voltageL": "-400920",
+                        "currentL": "3"
+                    },
+                    {
+                        "time": "3434",
+                        "voltageH": "-300945",
+                        "currentH": "3",
+                        "voltageL": "-500774",
+                        "currentL": "3"
+                    }
+                ]
+            },
+            "well8Data": {
+                "info": {
+                    "sampleFormat": "1",
+                    "samplesTotal": "9",
+                    "wellRange": "250 uA"
+                },
+                "sample": [
+                    {
+                        "time": "2002",
+                        "voltageH": "498886",
+                        "currentH": "2",
+                        "voltageL": "298992",
+                        "currentL": "3"
+                    },
+                    {
+                        "time": "2181",
+                        "voltageH": "398967",
+                        "currentH": "2",
+                        "voltageL": "198951",
+                        "currentL": "2"
+                    },
+                    {
+                        "time": "2360",
+                        "voltageH": "298919",
+                        "currentH": "2",
+                        "voltageL": "99079",
+                        "currentL": "2"
+                    },
+                    {
+                        "time": "2539",
+                        "voltageH": "198963",
+                        "currentH": "2",
+                        "voltageL": "-862",
+                        "currentL": "4"
+                    },
+                    {
+                        "time": "2718",
+                        "voltageH": "98983",
+                        "currentH": "3",
+                        "voltageL": "-100982",
+                        "currentL": "2"
+                    },
+                    {
+                        "time": "2897",
+                        "voltageH": "-854",
+                        "currentH": "3",
+                        "voltageL": "-200950",
+                        "currentL": "3"
+                    },
+                    {
+                        "time": "3076",
+                        "voltageH": "-100967",
+                        "currentH": "3",
+                        "voltageL": "-300880",
+                        "currentL": "3"
+                    },
+                    {
+                        "time": "3255",
+                        "voltageH": "-200931",
+                        "currentH": "4",
+                        "voltageL": "-400909",
+                        "currentL": "3"
+                    },
+                    {
+                        "time": "3434",
+                        "voltageH": "-300941",
+                        "currentH": "4",
+                        "voltageL": "-500827",
+                        "currentL": "2"
+                    }
+                ]
+            },
+            "well9Data": {
+                "info": {
+                    "sampleFormat": "1",
+                    "samplesTotal": "9",
+                    "wellRange": "250 uA"
+                },
+                "sample": [
+                    {
+                        "time": "2002",
+                        "voltageH": "498901",
+                        "currentH": "3",
+                        "voltageL": "298961",
+                        "currentL": "2"
+                    },
+                    {
+                        "time": "2181",
+                        "voltageH": "398967",
+                        "currentH": "3",
+                        "voltageL": "198978",
+                        "currentL": "3"
+                    },
+                    {
+                        "time": "2360",
+                        "voltageH": "298942",
+                        "currentH": "3",
+                        "voltageL": "99010",
+                        "currentL": "4"
+                    },
+                    {
+                        "time": "2539",
+                        "voltageH": "199016",
+                        "currentH": "4",
+                        "voltageL": "-888",
+                        "currentL": "4"
+                    },
+                    {
+                        "time": "2718",
+                        "voltageH": "99018",
+                        "currentH": "3",
+                        "voltageL": "-100959",
+                        "currentL": "3"
+                    },
+                    {
+                        "time": "2897",
+                        "voltageH": "-885",
+                        "currentH": "3",
+                        "voltageL": "-200977",
+                        "currentL": "3"
+                    },
+                    {
+                        "time": "3076",
+                        "voltageH": "-101032",
+                        "currentH": "3",
+                        "voltageL": "-300937",
+                        "currentL": "2"
+                    },
+                    {
+                        "time": "3255",
+                        "voltageH": "-200977",
+                        "currentH": "3",
+                        "voltageL": "-400932",
+                        "currentL": "2"
+                    },
+                    {
+                        "time": "3434",
+                        "voltageH": "-300933",
+                        "currentH": "3",
+                        "voltageL": "-500770",
+                        "currentL": "3"
+                    }
+                ]
+            },
+            "well10Data": {
+                "info": {
+                    "sampleFormat": "1",
+                    "samplesTotal": "9",
+                    "wellRange": "250 uA"
+                },
+                "sample": [
+                    {
+                        "time": "2002",
+                        "voltageH": "498928",
+                        "currentH": "1",
+                        "voltageL": "299018",
+                        "currentL": "2"
+                    },
+                    {
+                        "time": "2181",
+                        "voltageH": "398952",
+                        "currentH": "3",
+                        "voltageL": "198978",
+                        "currentL": "2"
+                    },
+                    {
+                        "time": "2360",
+                        "voltageH": "298961",
+                        "currentH": "4",
+                        "voltageL": "99021",
+                        "currentL": "3"
+                    },
+                    {
+                        "time": "2539",
+                        "voltageH": "198986",
+                        "currentH": "2",
+                        "voltageL": "-877",
+                        "currentL": "2"
+                    },
+                    {
+                        "time": "2718",
+                        "voltageH": "98964",
+                        "currentH": "3",
+                        "voltageL": "-100990",
+                        "currentL": "3"
+                    },
+                    {
+                        "time": "2897",
+                        "voltageH": "-904",
+                        "currentH": "2",
+                        "voltageL": "-200954",
+                        "currentL": "3"
+                    },
+                    {
+                        "time": "3076",
+                        "voltageH": "-100990",
+                        "currentH": "2",
+                        "voltageL": "-300914",
+                        "currentL": "2"
+                    },
+                    {
+                        "time": "3255",
+                        "voltageH": "-200927",
+                        "currentH": "3",
+                        "voltageL": "-400939",
+                        "currentL": "3"
+                    },
+                    {
+                        "time": "3434",
+                        "voltageH": "-300949",
+                        "currentH": "4",
+                        "voltageL": "-500797",
+                        "currentL": "3"
+                    }
+                ]
+            }
+        }
+    }
+}

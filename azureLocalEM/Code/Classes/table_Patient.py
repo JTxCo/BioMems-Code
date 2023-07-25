@@ -20,6 +20,4 @@ class Patient(BaseTable):
            raise TypeError("DOB must be a datetime.date object.") 
         self.DOB = DOB       
         
-    def validate_Date(self, DOB):
-        return datetime.datetime.strftime(DOB, '%Y-%m-%d') == DOB.strftime('%Y-%m-%d')
      

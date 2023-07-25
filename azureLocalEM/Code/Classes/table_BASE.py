@@ -1,4 +1,5 @@
 import pyodbc
+import datetime
 class BaseTable():
     def __init__(self) -> None:
         self.server_name = "localhost"
@@ -27,6 +28,7 @@ class BaseTable():
     def close(self):
         self.conn.close()
         
-        
+    def validate_Date(self, DOB):
+        return datetime.datetime.strftime(DOB, '%Y-%m-%d') == DOB.strftime('%Y-%m-%d')
     
     

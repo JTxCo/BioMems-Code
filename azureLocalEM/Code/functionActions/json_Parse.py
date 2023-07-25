@@ -19,7 +19,11 @@ def addPatient(patientInfo):
     patientFirst = patientInfo["patientName"].split()[0]
     patientlast = patientInfo["patientName"].split()[1]
     # print(f"patientFirst: {patientFirst}, patientLast: {patientlast}")
-    patient = Patient(patientInfo["patientID"], patientFirst, patientlast, patientInfo["patientDOB"])
+    try: 
+        patientID = int(patientInfo["patientID"])
+    except ValueError:
+        raise ValueError("Patient ID must be an integer.")
+    patient = Patient(patientID, patientFirst, patientlast, patientInfo["patientDOB"])
     print(f"patient: {patient.FirstName}")
 
 

@@ -19,14 +19,16 @@ class BaseTable():
         self.conn = pyodbc.connect(self.conn_str)
     
     def execute(self, query):
-        self.cursor = self.conn.cursor()    
+        self.cursor = self.conn.cursor()
         self.cursor.execute(query)
 
     def commit(self):
-        self.conn.commit()
+        if self.conn: 
+            self.conn.commit()
         
     def close(self):
-        self.conn.close()
+        if self.conn: 
+            self.conn.close()
         
     def validate_Date(self, DOB):
         return datetime.datetime.strftime(DOB, '%Y-%m-%d') == DOB.strftime('%Y-%m-%d')

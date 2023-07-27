@@ -2,6 +2,7 @@ import json
 import sys
 sys.path.append('azureLocalEm/Code/Classes')
 from table_Patient import Patient
+import datetime
 
 def parse(json_data):
     # for item in json_data["data"]["patientInfo"]:
@@ -19,13 +20,14 @@ def addPatient(patientInfo):
     patientFirst = patientInfo["patientName"].split()[0]
     patientlast = patientInfo["patientName"].split()[1]
     # print(f"patientFirst: {patientFirst}, patientLast: {patientlast}")
+    patientID =patientInfo["patientID"]
+    patientDOB_str = patientInfo["patientDOB"]
     try: 
-        patientID = int(patientInfo["patientID"])
+        patientDOB = datetime.datetime.strptime(patientDOB_str, "%Y.%m.%d").date()
     except ValueError:
-        raise ValueError("Patient ID must be an integer.")
-    patient = Patient(patientID, patientFirst, patientlast, patientInfo["patientDOB"])
+        raise ValueError("Incorrect data format for patientDOB, should be YYYY.MM.DD")
+    patient = Patient(patientID, patientFirst, patientlast, patientDOB)
     print(f"patient: {patient.FirstName}")
-
     return patient
 
 filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'

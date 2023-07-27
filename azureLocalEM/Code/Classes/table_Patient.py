@@ -3,12 +3,12 @@ import datetime
 from table_BASE import BaseTable
 
 class Patient(BaseTable):
-    def __init__(self, ID : int, FirstName: str, LastName: str, DOB: datetime.date) -> None:
+    def __init__(self, ID : str, FirstName: str, LastName: str, DOB: datetime.date) -> None:
         super().__init__()
         if None in (ID, FirstName, LastName, DOB):
             raise ValueError("All attributes must be non-null.")
-        if not isinstance(ID, int) or ID < 0 or ID > 13:
-            raise ValueError("ID must be an integer.")
+        if not isinstance(ID, str) or len (ID) > 13:
+            raise ValueError("ID must be a string with a maximum length of 13 characters.")
         self.ID = ID
         if not isinstance(FirstName, str) or len(FirstName) > 50: 
             raise ValueError("FirstName must be a string with a maximum length of 50 characters.")

@@ -10,7 +10,7 @@ def parse(json_data):
         data = json_data["data"]
         packetInfo = data["packetInfo"]
         patientInfo = packetInfo["patientInfo"]
-        addPatient(patientInfo)        
+        patient = addPatient(patientInfo)        
         # patientInfo = data.get("patientInfo", {})
 
 def addPatient(patientInfo):
@@ -26,7 +26,7 @@ def addPatient(patientInfo):
     patient = Patient(patientID, patientFirst, patientlast, patientInfo["patientDOB"])
     print(f"patient: {patient.FirstName}")
 
-
+    return patient
 
 filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
 with open(filepath, 'r') as f:

@@ -2,7 +2,9 @@ import json
 import sys
 sys.path.append('azureLocalEm/Code/Classes')
 from table_Patient import Patient
+from table_Device import Device
 import datetime
+import ast
 
 def parse(json_data):
     # for item in json_data["data"]["patientInfo"]:
@@ -11,8 +13,10 @@ def parse(json_data):
         data = json_data["data"]
         packetInfo = data["packetInfo"]
         patientInfo = packetInfo["patientInfo"]
-        patient = addPatient(patientInfo)        
-        # patientInfo = data.get("patientInfo", {})
+        addCalibrationSettings(data)
+        # device = addDevice(data)
+        # patient = addPatient(patientInfo)        
+        # print(f"patient: %s, device: %s" % (patient.FirstName, device.instrumentID))
 
 def addPatient(patientInfo):
     # for key, value in patientInfo.items():
@@ -30,6 +34,24 @@ def addPatient(patientInfo):
     print(f"patient: {patient.FirstName}")
     return patient
 
+def addDevice(data):
+    packetInfo = data["packetInfo"].keys()
+    deviceInfo = data["packetInfo"]["deviceInfo"]
+    instrumentID = deviceInfo["instrumentID"]
+    errorServiceCode = deviceInfo["errorServiceCode"]
+    cartirdgeInfo = data["packetInfo"]["cartridgeInfo"]
+    GSID = cartirdgeInfo["GSID"]
+    device = Device(instrumentID, errorServiceCode, GSID)
+    return device
+    # def addDevice
+
+def addCalibrationSettings(data):
+    calibrationSettings_str = data["packetInfo"]["calibrationSettings"]
+    calibrationSettings_lib = ast.literal_eval(calibrationSettings_str)
+    calibrationSettings = {key: int(value) for key, value in calibrationSettings_lib.items()}
+    print(f"calibrationSettings: {calibrationSettings_str}")
+    # def addCalibrationSettings
+    
 filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
 with open(filepath, 'r') as f:
     json_data = json.load(f)

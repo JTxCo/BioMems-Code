@@ -21,3 +21,4 @@ class Patient(BaseTable):
         self.DOB = DOB       
         
      
+    

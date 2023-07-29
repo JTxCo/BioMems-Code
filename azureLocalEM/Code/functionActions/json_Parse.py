@@ -1,10 +1,16 @@
 import json
 import sys
-sys.path.append('azureLocalEm/Code/Classes')
-from table_Patient import Patient
-from table_Device import Device
 import datetime
 import ast
+sys.path.append('azureLocalEm/Code/Classes')
+
+
+from table_Patient import Patient
+from table_Device import Device
+from table_Calibration_Setting import Calibration_Setting
+from table_Test import Test
+from table_Cartridge import Cartridge
+from table_Fluid_Method import Fluid_Method
 
 def parse(json_data):
     # for item in json_data["data"]["patientInfo"]:
@@ -13,10 +19,13 @@ def parse(json_data):
         data = json_data["data"]
         packetInfo = data["packetInfo"]
         patientInfo = packetInfo["patientInfo"]
-        addCalibrationSettings(data)
+        # calibrationSetting = addCalibrationSettings(data)
         # device = addDevice(data)
         # patient = addPatient(patientInfo)        
-        # print(f"patient: %s, device: %s" % (patient.FirstName, device.instrumentID))
+        # test = addTest(data)
+        # cartridge = addCartridge(data)
+        Fluid_Method = addFluidMethod(data)
+        # print(f"patient: %s, device: %s, calibrationSetting: %d" % (patient.FirstName, device.instrumentID, calibrationSetting.dacOffset))
 
 def addPatient(patientInfo):
     # for key, value in patientInfo.items():
@@ -47,11 +56,36 @@ def addDevice(data):
 
 def addCalibrationSettings(data):
     calibrationSettings_str = data["packetInfo"]["calibrationSettings"]
-    calibrationSettings_lib = ast.literal_eval(calibrationSettings_str)
-    calibrationSettings = {key: int(value) for key, value in calibrationSettings_lib.items()}
-    print(f"calibrationSettings: {calibrationSettings_str}")
+    # calibrationSettings_dict = json.loads(calibrationSettings_str)
+    calibrationSettings_dict = {key: int(value, 16) if value.startswith('0x') else int(value) for key, value in calibrationSettings_str.items()}
+    print(f"calibrationSettings: {calibrationSettings_dict}")
+    calibrationSetting = Calibration_Setting(calibrationSettings_dict["dacOffset"], calibrationSettings_dict["dacGain"], calibrationSettings_dict["currentOffset"], calibrationSettings_dict["shunt1Cal"], calibrationSettings_dict["shunt2Cal"], calibrationSettings_dict["shunt3Cal"], calibrationSettings_dict["rangeSelect"])
+    return calibrationSetting
     # def addCalibrationSettings
-    
+
+def addTest(data):
+    operatorID = data["packetInfo"]["scanInfo"]["operatorID"]
+    algorithmVersion = data["algorithmInfo"]["algorithmVersion"]
+    sampleVersion = data["sampleInfo"]["sampleVersion"]
+    test = Test(operatorID, int(algorithmVersion), int(sampleVersion))
+    return test 
+
+def addCartridge(data):
+    cartirdgeInfo = data["packetInfo"]["cartridgeInfo"]
+    GSID = cartirdgeInfo["GSID"]
+    assayName = cartirdgeInfo["assayName"]
+    cartridge = Cartridge(GSID, assayName)
+    print(f"cartridge: {cartridge.GSID}, {cartridge.assayName}")
+    return cartridge
+def addFluidMethod(data):
+    fluidMethodInfo = data["packetInfo"]["fluidMethodInfo"]
+    sampleName = fluidMethodInfo["sampleName"]
+    methaod_name = fluidMethodInfo["methodName"]
+    eCHemName = fluidMethodInfo["eChemName"]
+    washName = fluidMethodInfo["washName"]
+    incubationTime = int(fluidMethodInfo["incubationTime"])
+    fluidMethod = Fluid_Method(sampleName, methaod_name, eCHemName, washName, incubationTime)
+    return fluidMethod
 filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
 with open(filepath, 'r') as f:
     json_data = json.load(f)

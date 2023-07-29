@@ -44,7 +44,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[Test].[test_ID]" />
+								<References Name="[dbo].[Catridge].[GSID]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -52,7 +52,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Test]" />
+					<References Name="[dbo].[Catridge]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
@@ -63,7 +63,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[Patient].[patientID]" />
+								<References Name="[dbo].[Test].[test_ID]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -71,7 +71,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Patient]" />
+					<References Name="[dbo].[Test]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
@@ -101,25 +101,6 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[Fluid_Method].[fluid_ID]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Fluid_Method]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
-		</Element>
-		<Element Type="SqlPrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
 								<References Name="[dbo].[Calibration_Settting].[calibration_ID]" />
 							</Entry>
 						</Relationship>
@@ -131,7 +112,7 @@
 					<References Name="[dbo].[Calibration_Settting]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -150,7 +131,7 @@
 					<References Name="[dbo].[Device]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -169,7 +150,7 @@
 					<References Name="[dbo].[Well_Reference]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -188,6 +169,25 @@
 					<References Name="[dbo].[Well_Info]" />
 				</Entry>
 			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Fluid_Method].[fluid_ID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Fluid_Method]" />
+				</Entry>
+			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
@@ -196,7 +196,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[Catridge].[GSID]" />
+								<References Name="[dbo].[Patient].[patientID]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -204,7 +204,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Catridge]" />
+					<References Name="[dbo].[Patient]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
@@ -246,7 +246,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="7" />
+						<AttachedAnnotation Disambiguator="6" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -386,7 +386,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="11" />
+						<AttachedAnnotation Disambiguator="3" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -447,7 +447,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="8" />
+						<AttachedAnnotation Disambiguator="7" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -843,7 +843,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="6" />
+						<AttachedAnnotation Disambiguator="10" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -955,7 +955,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="4" />
+						<AttachedAnnotation Disambiguator="11" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1108,7 +1108,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="3" />
+						<AttachedAnnotation Disambiguator="4" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1121,6 +1121,38 @@
 									<Relationship Name="Type">
 										<Entry>
 											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Test].[algorithmVersion]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Test].[sampleVersion]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -1344,7 +1376,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="10" />
+						<AttachedAnnotation Disambiguator="9" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1389,7 +1421,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="9" />
+						<AttachedAnnotation Disambiguator="8" />
 					</Element>
 				</Entry>
 				<Entry>

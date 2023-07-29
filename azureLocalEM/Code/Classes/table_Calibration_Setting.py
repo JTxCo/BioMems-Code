@@ -1,6 +1,6 @@
 import pyodbc
 from table_BASE import BaseTable
-class Calribration_Setting(BaseTable):
+class Calibration_Setting(BaseTable):
     def __init__(self, dacOffset, dacGain, currentOffset, shunt1Cal, shunt2Cal, shunt3Cal, rangeSelect) -> None:
         super().__init__()
         if None in (dacOffset, dacGain, currentOffset, shunt1Cal, shunt2Cal, shunt3Cal, rangeSelect):

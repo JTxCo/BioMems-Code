@@ -13,6 +13,6 @@ class TestTime(BaseTable):
         if not isinstance(Time, time):
             raise TypeError("Time must be a datetime.time object.") 
         self.Time = Time
-        if not isinstance(TimeZone, str) or len(TimeZone) > 1:
-            raise ValueError("TimeZone must be a string with a maximum length of 1 character.")
+        if not isinstance(TimeZone, int):
+            raise TypeError("TimeZone must be an integer.") 
         self.TimeZone = TimeZone

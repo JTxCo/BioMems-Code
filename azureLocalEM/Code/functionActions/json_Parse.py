@@ -2,6 +2,7 @@ import json
 import sys
 import datetime
 import ast
+import ujson as json
 sys.path.append('azureLocalEm/Code/Classes')
 
 
@@ -11,6 +12,10 @@ from table_Calibration_Setting import Calibration_Setting
 from table_Test import Test
 from table_Cartridge import Cartridge
 from table_Fluid_Method import Fluid_Method
+from table_TestTime import TestTime
+from table_Well_Data import Well_Data
+from table_Well_Info import Well_Info
+from table_Well_Reference import Well_Reference
 
 def parse(json_data):
     # for item in json_data["data"]["patientInfo"]:
@@ -24,7 +29,10 @@ def parse(json_data):
         # patient = addPatient(patientInfo)        
         # test = addTest(data)
         # cartridge = addCartridge(data)
-        Fluid_Method = addFluidMethod(data)
+        # Fluid_Method = addFluidMethod(data)
+        # testTIme = addTestTime(data)
+        addWellReferences(data)
+        # addWellInfo(data)
         # print(f"patient: %s, device: %s, calibrationSetting: %d" % (patient.FirstName, device.instrumentID, calibrationSetting.dacOffset))
 
 def addPatient(patientInfo):
@@ -86,6 +94,25 @@ def addFluidMethod(data):
     incubationTime = int(fluidMethodInfo["incubationTime"])
     fluidMethod = Fluid_Method(sampleName, methaod_name, eCHemName, washName, incubationTime)
     return fluidMethod
+
+def addTestTime(data):
+    dateTime = data["packetInfo"]["dateTime"]
+    print(f"dateTime: {dateTime}")
+    date = datetime.datetime.strptime(dateTime["date"], "%Y.%m.%d").date()
+    time = datetime.datetime.strptime( dateTime["time"], "%H:%M:%S").time()
+    timeZone = int(dateTime["timeZone"])
+    testTime = TestTime(date, time, timeZone)
+    return testTime 
+
+def addWellReferences(data):
+    sampleData = data["sampleData"]
+    for well_key, well_data in sampleData.items():
+        print("well_key: %s" % well_key)
+        well_data = sampleData[well_key]
+        print("header:" + join(well_data.keys()))
+# def addWellInfo(data):
+
+    
 filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
 with open(filepath, 'r') as f:
     json_data = json.load(f)

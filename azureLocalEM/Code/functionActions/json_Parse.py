@@ -17,30 +17,27 @@ from table_Well_Data import Well_Data
 from table_Well_Info import Well_Info
 from table_Well_Reference import Well_Reference
 
-def parse(json_data):
+def parse_for_data(json_data):
     # for item in json_data["data"]["patientInfo"]:
         # print(f"Item: {item}")
     if "data" in json_data:
         data = json_data["data"]
-        packetInfo = data["packetInfo"]
-        patientInfo = packetInfo["patientInfo"]
-        # calibrationSetting = addCalibrationSettings(data)
-        # device = addDevice(data)
-        # patient = addPatient(patientInfo)        
-        # test = addTest(data)
-        # cartridge = addCartridge(data)
-        # Fluid_Method = addFluidMethod(data)
-        # testTIme = addTestTime(data)
-        addWellReferences(data)
+        calibrationSetting = addCalibrationSettings(data)
+        device = addDevice(data)
+        patient = addPatient(data)        
+        test = addTest(data)
+        cartridge = addCartridge(data)
+        Fluid_Method = addFluidMethod(data)
+        testTIme = addTestTime(data)
+        list_ofwells_samples = addWellReferences(data)
         # addWellInfo(data)
         # print(f"patient: %s, device: %s, calibrationSetting: %d" % (patient.FirstName, device.instrumentID, calibrationSetting.dacOffset))
 
-def addPatient(patientInfo):
-    # for key, value in patientInfo.items():
-        # print(f"key: {key}, value: {value}")
+def addPatient(data): 
+    packetInfo = data["packetInfo"]
+    patientInfo = packetInfo["patientInfo"]
     patientFirst = patientInfo["patientName"].split()[0]
     patientlast = patientInfo["patientName"].split()[1]
-    # print(f"patientFirst: {patientFirst}, patientLast: {patientlast}")
     patientID =patientInfo["patientID"]
     patientDOB_str = patientInfo["patientDOB"]
     try: 
@@ -102,21 +99,38 @@ def addTestTime(data):
     time = datetime.datetime.strptime( dateTime["time"], "%H:%M:%S").time()
     timeZone = int(dateTime["timeZone"])
     testTime = TestTime(date, time, timeZone)
-    return testTime 
+    return testTime
 
+def addWellInfo(well_info_dict):
+    # print("well_info: %s" % well_info_dict)
+    well_X_info = Well_Info(json.dumps(well_info_dict))
+    return well_X_info 
+
+def addWellData(well_sample_list):
+    list_well_class_data = [Well_Data(json.dumps(well_sample)) for well_sample in well_sample_list]
+    return list_well_class_data
+    
 def addWellReferences(data):
+    list_ofwells_samples = []
     sampleData = data["sampleData"]
     for well_key, well_data in sampleData.items():
+        well_info_dict = well_data["info"]
+        well_X_info = addWellInfo(well_info_dict)
         print("well_key: %s" % well_key)
         well_data = sampleData[well_key]
-        print("header:" + join(well_data.keys()))
-# def addWellInfo(data):
+        sample_samples = well_data["sample"]
+        list_well_class_data = addWellData(sample_samples) #list of all the samples of a well, X
+        list_well_class_data.insert(0, well_X_info) #the info is added at the first position of the list
+        list_ofwells_samples.append(list_well_class_data) #list of all the wells, each position is a list of for each well
+    
+    return list_ofwells_samples
+    
 
     
 filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
 with open(filepath, 'r') as f:
     json_data = json.load(f)
-    parse(json_data)
+    parse_for_data(json_data)
 
 
 

@@ -6,5 +6,8 @@
     "azureFunctions.projectRuntime": "~4",
     "debug.internalConsoleOptions": "neverOpen",
     "azureFunctions.projectLanguageModel": 2,
-    "azureFunctions.projectSubpath": "azureLocalEM/Code/testFunctions"
+    "azureFunctions.projectSubpath": "azureLocalEM/Code/testFunctions",
+    "python.analysis.extraPaths": [
+        "./azureLocalEM/Code/Classes"
+    ]
 }

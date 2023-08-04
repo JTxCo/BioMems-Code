@@ -22,17 +22,8 @@ def parse_for_data(json_data):
         # print(f"Item: {item}")
     if "data" in json_data:
         data = json_data["data"]
-        calibrationSetting = addCalibrationSettings(data)
-        device = addDevice(data)
-        patient = addPatient(data)        
-        test = addTest(data)
-        cartridge = addCartridge(data)
-        Fluid_Method = addFluidMethod(data)
-        testTIme = addTestTime(data)
-        list_ofwells_samples = addWellReferences(data)
-        # addWellInfo(data)
-        # print(f"patient: %s, device: %s, calibrationSetting: %d" % (patient.FirstName, device.instrumentID, calibrationSetting.dacOffset))
-
+        return data
+       
 def addPatient(data): 
     packetInfo = data["packetInfo"]
     patientInfo = packetInfo["patientInfo"]
@@ -45,7 +36,7 @@ def addPatient(data):
     except ValueError:
         raise ValueError("Incorrect data format for patientDOB, should be YYYY.MM.DD")
     patient = Patient(patientID, patientFirst, patientlast, patientDOB)
-    print(f"patient: {patient.FirstName}")
+    # print(f"patient: {patient.FirstName}")
     return patient
 
 def addDevice(data):
@@ -63,7 +54,7 @@ def addCalibrationSettings(data):
     calibrationSettings_str = data["packetInfo"]["calibrationSettings"]
     # calibrationSettings_dict = json.loads(calibrationSettings_str)
     calibrationSettings_dict = {key: int(value, 16) if value.startswith('0x') else int(value) for key, value in calibrationSettings_str.items()}
-    print(f"calibrationSettings: {calibrationSettings_dict}")
+    # print(f"calibrationSettings: {calibrationSettings_dict}")
     calibrationSetting = Calibration_Setting(calibrationSettings_dict["dacOffset"], calibrationSettings_dict["dacGain"], calibrationSettings_dict["currentOffset"], calibrationSettings_dict["shunt1Cal"], calibrationSettings_dict["shunt2Cal"], calibrationSettings_dict["shunt3Cal"], calibrationSettings_dict["rangeSelect"])
     return calibrationSetting
     # def addCalibrationSettings
@@ -80,7 +71,7 @@ def addCartridge(data):
     GSID = cartirdgeInfo["GSID"]
     assayName = cartirdgeInfo["assayName"]
     cartridge = Cartridge(GSID, assayName)
-    print(f"cartridge: {cartridge.GSID}, {cartridge.assayName}")
+    # print(f"cartridge: {cartridge.GSID}, {cartridge.assayName}")
     return cartridge
 def addFluidMethod(data):
     fluidMethodInfo = data["packetInfo"]["fluidMethodInfo"]
@@ -94,7 +85,7 @@ def addFluidMethod(data):
 
 def addTestTime(data):
     dateTime = data["packetInfo"]["dateTime"]
-    print(f"dateTime: {dateTime}")
+    # print(f"dateTime: {dateTime}")
     date = datetime.datetime.strptime(dateTime["date"], "%Y.%m.%d").date()
     time = datetime.datetime.strptime( dateTime["time"], "%H:%M:%S").time()
     timeZone = int(dateTime["timeZone"])
@@ -116,7 +107,7 @@ def addWellReferences(data):
     for well_key, well_data in sampleData.items():
         well_info_dict = well_data["info"]
         well_X_info = addWellInfo(well_info_dict)
-        print("well_key: %s" % well_key)
+        # print("well_key: %s" % well_key)
         well_data = sampleData[well_key]
         sample_samples = well_data["sample"]
         list_well_class_data = addWellData(sample_samples) #list of all the samples of a well, X
@@ -130,7 +121,16 @@ def addWellReferences(data):
 filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
 with open(filepath, 'r') as f:
     json_data = json.load(f)
-    parse_for_data(json_data)
+    data = parse_for_data(json_data)
+    calibrationSetting = addCalibrationSettings(data)
+    device = addDevice(data)
+    patient = addPatient(data)        
+    test = addTest(data)
+    cartridge = addCartridge(data)
+    Fluid_Method = addFluidMethod(data)
+    testTIme = addTestTime(data)
+    list_ofwells_samples = addWellReferences(data)
+
 
 
 

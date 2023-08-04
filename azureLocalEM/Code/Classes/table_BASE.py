@@ -3,9 +3,9 @@ import datetime
 class BaseTable():
     def __init__(self) -> None:
         self.server_name = "localhost"
-        self.database_name = "azureLocalTEST"
-        self.user_id = "testLogin"
-        self.password = "$testPassword"
+        self.database_name = "BIOMEMS-local"
+        self.user_id = "sa"
+        self.password = "P@ssword"
         self.conn_str = (
             f"Driver={{ODBC Driver 17 for SQL Server}};"
             f"Server={self.server_name};"

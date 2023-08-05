@@ -118,18 +118,18 @@ def addWellReferences(data):
     
 
     
-filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
-with open(filepath, 'r') as f:
-    json_data = json.load(f)
-    data = parse_for_data(json_data)
-    calibrationSetting = addCalibrationSettings(data)
-    device = addDevice(data)
-    patient = addPatient(data)        
-    test = addTest(data)
-    cartridge = addCartridge(data)
-    Fluid_Method = addFluidMethod(data)
-    testTIme = addTestTime(data)
-    list_ofwells_samples = addWellReferences(data)
+# filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
+# with open(filepath, 'r') as f:
+#     json_data = json.load(f)
+#     data = parse_for_data(json_data)
+#     calibrationSetting = addCalibrationSettings(data)
+#     device = addDevice(data)
+#     patient = addPatient(data)        
+#     test = addTest(data)
+#     cartridge = addCartridge(data)
+#     Fluid_Method = addFluidMethod(data)
+#     testTIme = addTestTime(data)
+#     list_ofwells_samples = addWellReferences(data)
 
 
 

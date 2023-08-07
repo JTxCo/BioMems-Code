@@ -116,7 +116,9 @@ def addWellReferences(data):
     
     return list_ofwells_samples
     
-
+def addPatientDevice(patientID, instrumeentID):
+    patient_device = Patient_Device(patienID, instrumentID)
+    return patient_device
     
 # filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
 # with open(filepath, 'r') as f:

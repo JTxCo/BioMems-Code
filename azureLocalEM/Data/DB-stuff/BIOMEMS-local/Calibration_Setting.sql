@@ -1,4 +1,4 @@
-CREATE TABLE [dbo].[Calibration_Settting]
+CREATE TABLE [dbo].[Calibration_Setting]
 (
   [calibration_ID] INT NOT NULL PRIMARY KEY IDENTITY,
   [dacOffset] INT NOT NULL,

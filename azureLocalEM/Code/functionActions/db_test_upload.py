@@ -7,7 +7,7 @@ import pyodbc
 
 sys.path.append('azureLocalEm/Code/Classes')
 
-
+from table_BASE import BaseTable
 from table_Patient import Patient   
 from table_Device import Device
 from table_Calibration_Setting import Calibration_Setting
@@ -18,9 +18,27 @@ from table_TestTime import TestTime
 from table_Well_Data import Well_Data
 from table_Well_Info import Well_Info
 from table_Well_Reference import Well_Reference
+from table_PatientDevice import PatientDevice
+from table_Sample import Sample
 
-from json_Parse import parse_for_data, addPatient, addDevice, addCalibrationSettings, addFluidMethod, addTestTime, addCalibrationSettings, addCartridge, addTest, addWellData, addWellInfo, addWellReferences, addPatientDevice
+from json_Parse import parse_for_data, addPatient, addDevice, addCalibrationSettings, addFluidMethod, addTestTime, addCalibrationSettings, addCartridge, addTest, addWellData, addWellInfo, addWellReferences, addPatientDevice, addSample
 
+def RemoveConstraint(constraint: str, table: str):
+    base = BaseTable()
+    base.connect()
+    query = f"ALTER TABLE [dbo].[{table}] DROP CONSTRAINT {constraint}"
+    base.execute(query)
+    base.commit()
+    base.close()
+    
+def AddConstraint(constraint: str, table: str):
+    base = BaseTable()
+    base.connect()
+    query = f"ALTER TABLE [dbo].[{table}] ADD CONSTRAINT {constraint}"
+    base.execute(query)
+    base.commit()
+    base.close()
+    
 def patientInsert(patient: Patient):
     patient.connect()
     query = f"INSERT INTO [dbo].[Patient] ([patientID], [patientFirstName], [patientLastName], [patientDOB]) VALUES ('{patient.ID}', '{patient.FirstName}', '{patient.LastName}', '{patient.DOB}')"
@@ -73,9 +91,9 @@ def Well_Data_Insert(wellData: Well_Data):
     wellData.close()
     return well_data_ID
 
-def Well_Reference_Insert(wellReference: Well_Reference, well_info_ID: int, well_data_ID: int):
+def Well_Reference_Insert(wellReference: Well_Reference, sample_ID: int, well_info_ID: int, well_data_ID: int):
     wellReference.connect()
-    query = f"INSERT INTO [dbo].[Well_Reference] ([well_info_ID], [well_data_ID]) OUPUT inserted.[well_reference_ID] VALUES ('{well_info_ID}', '{well_data_ID}')"
+    query = f"INSERT INTO [dbo].[Well_Reference] ([sample_ID], [well_name], [well_info_ID], [well_data_ID]) OUPUT inserted.[well_reference_ID] VALUES ('{well_info_ID}', '{well_data_ID}')"
     wellReference.execute(query)
     well_reference_id = wellReference.cursor.fetchone()[0]
     wellReference.commit()
@@ -112,6 +130,16 @@ def CartridgeInsert(cartridge: Cartridge, test_ID: int):
     cartridge.execute(query)
     cartridge.commit()
     cartridge.close()
+
+def SampleInsert(sample: Sample):
+    sample.connect()
+    query = f"INSERT INTO [dbo].[Sample] OUTPUT inserted.[sample_ID]')"
+    sample.execute(query)
+    sample_ID = sample.cursor.fetchone()[0]
+    sample.commit()
+    sample.close()
+    return sample_ID
+
     
 filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
 with open(filepath, 'r') as f:
@@ -123,8 +151,13 @@ with open(filepath, 'r') as f:
     # deviceInsert(device, patient.ID)
     # fluidMethod = addFluidMethod(data)
     # fluid_ID = fluidMethodInsert(fluidMethod)
-    Calibration_Setting = addCalibrationSettings(data)
-    calibration_ID = CalibrationSettingsInsert(Calibration_Setting)
-    
-    
+    # print(fluid_ID)
+    # Calibration_Setting = addCalibrationSettings(data)
+    # calibration_ID = CalibrationSettingsInsert(Calibration_Setting)
+    # print(calibration_ID)
+    # testTime = addTestTime(data)
+    # print(f"Date: {testTime.Date}, Time: {testTime.Time}, TimeZone: {testTime.TimeZone}")
+    # time_ID = TestTimeInsert(testTime)
+    # print(time_ID)    
+    sample_ID = SampleInsert(Sample())
 

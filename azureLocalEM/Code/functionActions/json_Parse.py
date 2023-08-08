@@ -104,26 +104,26 @@ def addWellData(well_sample_list):
 def addWellReferences(data):
     list_ofwells_samples = []
     sampleData = data["sampleData"]
-    for well_key, well_data in sampleData.items():
+    for well_name, well_data in sampleData.items():
         well_info_dict = well_data["info"]
         well_X_info = addWellInfo(well_info_dict)
-        # print("well_key: %s" % well_key)
-        well_data = sampleData[well_key]
-        sample_samples = well_data["sample"]
-        list_well_class_data = addWellData(sample_samples) #list of all the samples of a well, X
-        list_well_class_data.insert(0, well_X_info) #the info is added at the first position of the list
-        list_ofwells_samples.append(list_well_class_data) #list of all the wells, each position is a list of for each well
-    
-    return list_ofwells_samples
+        print("well_key: %s" % well_name)
+        well_data = sampleData[well_name]
+        well_X_data = well_data["sample"]
+        list_well_X_info_data = addWellData(well_X_data) #list of all the samples of a well, X
+        list_well_X_info_data.insert(0, well_X_info) #the info is added at the first position of the list
+        list_all_wells_data.append(list_well_X_info_data) #list of all the wells, each position is a list of for each well
+        
+    return list_all_wells_data
     
 def addPatientDevice(patientID, instrumeentID):
     patient_device = Patient_Device(patienID, instrumentID)
     return patient_device
     
-# filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
-# with open(filepath, 'r') as f:
-#     json_data = json.load(f)
-#     data = parse_for_data(json_data)
+filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
+with open(filepath, 'r') as f:
+    json_data = json.load(f)
+    data = parse_for_data(json_data)
 #     calibrationSetting = addCalibrationSettings(data)
 #     device = addDevice(data)
 #     patient = addPatient(data)        
@@ -131,7 +131,7 @@ def addPatientDevice(patientID, instrumeentID):
 #     cartridge = addCartridge(data)
 #     Fluid_Method = addFluidMethod(data)
 #     testTIme = addTestTime(data)
-#     list_ofwells_samples = addWellReferences(data)
+    list_ofwells_samples = addWellReferences(data)
 
 
 

@@ -29,7 +29,10 @@ class BaseTable():
     def close(self):
         if self.conn: 
             self.conn.close()
-        
+
+    def fetchone(self):
+        if self.cursor:
+            return self.cursor.fetchone()
     def validate_Date(self, DOB):
         return datetime.datetime.strftime(DOB, '%Y-%m-%d') == DOB.strftime('%Y-%m-%d')
     

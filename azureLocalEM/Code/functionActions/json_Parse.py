@@ -104,7 +104,7 @@ def addWellData(well_sample_list):
     return list_well_class_data
     
 def addWellReferences(data):
-    will_Reference_list = []
+    well_Reference_list = []
     sampleData = data["sampleData"]
     for well_name, well_data in sampleData.items():
         well_info_dict = well_data["info"]
@@ -114,16 +114,16 @@ def addWellReferences(data):
         well_X_data = well_data["sample"]
         list_well_X_info_data = addWellData(well_X_data) #list of all the samples of a well, X
         list_well_X_info_data.insert(0, well_X_info) #the info is added at the first position of the list
-        well_X_reference = Well_Reference(list_well_X_info_data, well_name) 
-        will_Reference_list.append(well_X_reference)
-    return will_Reference_list
-def addPatientDevice(patientID, instrumeentID):
-    patient_device = Patient_Device(patienID, instrumentID)
+        well_X_reference = Well_Reference(list_well_X_info_data, well_name) #instance of a well reference
+        well_Reference_list.append(well_X_reference)# add to list of instances of well references
+    return well_Reference_list#list of all instanes of all well references
+def addPatientDevice(patientID, instrumentID):
+    patient_device = PatientDevice(patientID, instrumentID)
     return patient_device
 
-# def addSample(test_ID):
-#     sample = Sample(test_ID)
-#     return sample
+def addSample(well_reference_list):
+    sample = Sample(well_reference_list)
+    return sample
 
 # filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
 # with open(filepath, 'r') as f:

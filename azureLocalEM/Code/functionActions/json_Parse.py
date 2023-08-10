@@ -63,6 +63,7 @@ def addCalibrationSettings(data):
 
 def addTest(data):
     operatorID = data["packetInfo"]["scanInfo"]["operatorID"]
+    print(f"operatorID: {operatorID}")
     algorithmVersion = data["algorithmInfo"]["algorithmVersion"]
     sampleVersion = data["sampleInfo"]["sampleVersion"]
     test = Test(operatorID, int(algorithmVersion), int(sampleVersion))

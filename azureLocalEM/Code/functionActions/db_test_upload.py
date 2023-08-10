@@ -100,26 +100,26 @@ def Well_Reference_Insert(wellReference: Well_Reference, sample_ID: int):
     wellReference.close()
     return well_reference_id
     
-def TestInsert(test: Test,instrumentID: str, fluid_ID: int, calibration_ID: int, time_ID: int):
+def TestInsert(test: Test, instrumentID, fluid_ID: int, calibration_ID: int, time_ID: int):
     test.connect()
-    query = f"INSERT INTO [dbo].[Test] ([operatorID],[instrumentID], [algorithmVersion], [sampleVersion], [fluid_ID], [calibration_ID], [time_ID], [well_reference_ID]) OUTPUT inserted.[test_ID] VALUES ('{test.operatorID}','{instrumentID}', '{test.algorithmVersion}', '{test.sampleVersion}', '{fluid_ID}', '{calibration_ID}', '{time_ID}', '{well_reference_ID}')"
+    print("instrumentID: " + instrumentID)
+    query = f"INSERT INTO [dbo].[Test] ([operatorID], [algorithmVersion], [sampleVersion], [instrumentID],[fluid_ID], [calibration_ID], [time_ID]) OUTPUT inserted.[test_ID] VALUES ('{test.operatorID}',≈ '{test.algorithmVersion}', '{test.sampleVersion}', '{instrumentID}', '{fluid_ID}', '{calibration_ID}', '{time_ID}')"
     test.execute(query)
     test_ID = test.cursor.fetchone()[0]
     test.commit()
     test.close()
     return test_ID
 
-def deviceInsert(device: Device, patientID: str):
+def deviceInsert(device: Device):
     device.connect()
-    query = f"INSERT INTO [dbo].[Device] ([instrumentID], [errorServiceCode], [GSID]) VALUES ('{device.instrumentID}', '{device.errorServiceCode}','{device.GSID}')"
+    query = f"INSERT INTO [dbo].[Device] ([instrumentID], [errorServiceCode]) VALUES ('{device.instrumentID}', '{device.errorServiceCode}')"
     device.execute(query)
     device.commit()
     device.close()
     
-def PatientDeviceInsert(patientID: int, instrumetnID: str):
-    patientDevice = addPatientDevice(patientID, instrumetnID)
+def PatientDeviceInsert(patientDevice: PatientDevice):
     patientDevice.connect()
-    query = f"INSERT INTO [dbo].[Patient_Device] ([patientID], [instrumentID]) VALUES ('{patientDevice.patientID}', '{patientDevice.instrumentID}')"
+    query = f"INSERT INTO [dbo].[PatientDevice] ([patientID], [instrumentID]) VALUES ('{patientDevice.patientID}', '{patientDevice.instrumentID}')"
     patientDevice.execute(query)
     patientDevice.commit()
     patientDevice.close()
@@ -145,37 +145,52 @@ filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
 with open(filepath, 'r') as f:
     json_data = json.load(f)
     data = parse_for_data(json_data)
-    patient = addPatient(data)
-    patientInsert(patient)
-    device = addDevice(data)
-    deviceInsert(device)
-    fluidMethod = addFluidMethod(data)
-    fluid_ID = fluidMethodInsert(fluidMethod)
-    # print(fluid_ID)
-    Calibration_Setting = addCalibrationSettings(data)
-    calibration_ID = CalibrationSettingsInsert(Calibration_Setting)
-    # print(calibration_ID)
-    testTime = addTestTime(data)
-    # print(f"Date: {testTime.Date}, Time: {testTime.Time}, TimeZone: {testTime.TimeZone}")
-    time_ID = TestTimeInsert(testTime)
-    # print(time_ID)  
-    test = addTest(data)
-    test_ID = TestInsert(test, device.instrumentID, fluid_ID, calibration_ID, time_ID)
-    well_reference_list = addWellReferences(data)
-    sample = addSample(well_reference_list)
-    sample_ID = SampleInsert(sample, test_ID)
-    well_reference_ID = Well_Reference_Insert(well_reference_list[0], sample_ID)
-    
-    
-    # well_name = well_reference_list[0].well_name
-    well_info = well_reference_list[0].well_list_info_data[0]
-    # print(well_info.well_info)
-    well_info_ID = Well_Info_Insert(well_info)
-    print(well_info_ID)
-    well_data = well_reference_list[0].well_list_info_data[1]
-    print(well_data.well_data)
-    well_data_ID = Well_Data_Insert(well_data)
-    print(well_data_ID)
-    # print(well_info)
-    # sample_ID = SampleInsert(addSample(addWellReferences(data)))
+    try: 
+        # patient = addPatient(data)
+        # patientInsert(patient)
+        # print("Patient Inserted")
+        
+        # device = addDevice(data)
+        # print(f"Device: {device.instrumentID}, Error Code: {device.errorServiceCode}, GSID: {device.GSID}")
+        # deviceInsert(device)
+        # print("Device Inserted")
+        
+        # patientDevice = addPatientDevice(patient.ID, device.instrumentID)
+        # PatientDeviceInsert(patientDevice)
+        # print("Patient Device Inserted")
+        
+        fluidMethod = addFluidMethod(data)
+        fluid_ID = fluidMethodInsert(fluidMethod)
+        print("FLuid inserted with id: " + str(fluid_ID))
+        
+        Calibration_Setting = addCalibrationSettings(data)
+        calibration_ID = CalibrationSettingsInsert(Calibration_Setting)
+        print("Calibration inserted with id: " + calibration_ID)
+        
+        testTime = addTestTime(data)
+        # print(f"Date: {testTime.Date}, Time: {testTime.Time}, TimeZone: {testTime.TimeZone}")
+        time_ID = TestTimeInsert(testTime)
+        print("Time inserted with id: " + time_ID)
+        
+        test = addTest(data)
+        test_ID = TestInsert(test, device.instrumentID, fluid_ID, calibration_ID, time_ID)
+        print("Test table inserted with id: " + test_ID)
+        
+        well_reference_list = addWellReferences(data)
+        sample = addSample(well_reference_list)
+        sample_ID = SampleInsert(sample, test_ID)
+        print("Sample inserted with id: " + sample_ID)
+        well_reference_ID = Well_Reference_Insert(well_reference_list[0], sample_ID)
+        cartridge = addCartridge(data)
+        CartridgeInsert(cartridge, test_ID) 
+        print("Cartridge inserted")
+        well_info = well_reference_list[0].well_list_info_data[0]
+        well_info_ID = Well_Info_Insert(well_info)
+        print(well_info_ID)
+        well_data = well_reference_list[0].well_list_info_data[1]
+        print(well_data.well_data)
+        well_data_ID = Well_Data_Insert(well_data)
+        print(well_data_ID)
 
+    except Exception as e:
+        print("Failed with exception: " + str(e)) 

@@ -1,6 +1,6 @@
 CREATE TABLE [dbo].[Test]
 (
-  [test_ID] INT NOT NULL PRIMARY KEY IDENTITY,
+  [test_ID] INT PRIMARY KEY IDENTITY(1,1),
   [operatorID] VARCHAR(13) NOT NULL,
   [algorithmVersion] INT NOT NULL,
   [sampleVersion] INT NOT NULL,

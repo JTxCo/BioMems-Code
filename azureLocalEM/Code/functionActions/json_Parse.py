@@ -16,6 +16,8 @@ from table_TestTime import TestTime
 from table_Well_Data import Well_Data
 from table_Well_Info import Well_Info
 from table_Well_Reference import Well_Reference
+from table_PatientDevice import PatientDevice
+from table_Sample import Sample
 
 def parse_for_data(json_data):
     # for item in json_data["data"]["patientInfo"]:
@@ -61,6 +63,7 @@ def addCalibrationSettings(data):
 
 def addTest(data):
     operatorID = data["packetInfo"]["scanInfo"]["operatorID"]
+    print(f"operatorID: {operatorID}")
     algorithmVersion = data["algorithmInfo"]["algorithmVersion"]
     sampleVersion = data["sampleInfo"]["sampleVersion"]
     test = Test(operatorID, int(algorithmVersion), int(sampleVersion))
@@ -102,34 +105,39 @@ def addWellData(well_sample_list):
     return list_well_class_data
     
 def addWellReferences(data):
-    list_ofwells_samples = []
+    well_Reference_list = []
     sampleData = data["sampleData"]
-    for well_key, well_data in sampleData.items():
+    for well_name, well_data in sampleData.items():
         well_info_dict = well_data["info"]
         well_X_info = addWellInfo(well_info_dict)
-        # print("well_key: %s" % well_key)
-        well_data = sampleData[well_key]
-        sample_samples = well_data["sample"]
-        list_well_class_data = addWellData(sample_samples) #list of all the samples of a well, X
-        list_well_class_data.insert(0, well_X_info) #the info is added at the first position of the list
-        list_ofwells_samples.append(list_well_class_data) #list of all the wells, each position is a list of for each well
-    
-    return list_ofwells_samples
-    
+        print("well_key: %s" % well_name)
+        well_data = sampleData[well_name]
+        well_X_data = well_data["sample"]
+        list_well_X_info_data = addWellData(well_X_data) #list of all the samples of a well, X
+        list_well_X_info_data.insert(0, well_X_info) #the info is added at the first position of the list
+        well_X_reference = Well_Reference(list_well_X_info_data, well_name) #instance of a well reference
+        well_Reference_list.append(well_X_reference)# add to list of instances of well references
+    return well_Reference_list#list of all instanes of all well references
+def addPatientDevice(patientID, instrumentID):
+    patient_device = PatientDevice(patientID, instrumentID)
+    return patient_device
 
-    
-filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
-with open(filepath, 'r') as f:
-    json_data = json.load(f)
-    data = parse_for_data(json_data)
-    calibrationSetting = addCalibrationSettings(data)
-    device = addDevice(data)
-    patient = addPatient(data)        
-    test = addTest(data)
-    cartridge = addCartridge(data)
-    Fluid_Method = addFluidMethod(data)
-    testTIme = addTestTime(data)
-    list_ofwells_samples = addWellReferences(data)
+def addSample(well_reference_list):
+    sample = Sample(well_reference_list)
+    return sample
+
+# filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
+# with open(filepath, 'r') as f:
+#     json_data = json.load(f)
+#     data = parse_for_data(json_data)
+#     calibrationSetting = addCalibrationSettings(data)
+#     device = addDevice(data)
+#     patient = addPatient(data)        
+#     test = addTest(data)
+#     cartridge = addCartridge(data)
+#     Fluid_Method = addFluidMethod(data)
+#     testTIme = addTestTime(data)
+    # wellReference_List = addWellReferences(data)
 
 
 

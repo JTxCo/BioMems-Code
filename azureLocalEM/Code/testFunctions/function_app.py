@@ -1,6 +1,12 @@
 import azure.functions as func
 import logging
-import json
+import ujson as json
+import pyodbc
+import sys
+
+sys.path.append('azureLocalEm/Code/functionActions')
+
+
 
 app = func.FunctionApp()
 

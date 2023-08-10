@@ -11,8 +11,8 @@ class Test(BaseTable):
         self.operatorID = operatorID
         if not isinstance(algorithmVersion, int):
             raise TypeError("algorithmVersion must be an integer.")
-        self.algorithmInfo = algorithmVersion
+        self.algorithmVersion = algorithmVersion
         if not isinstance(sampleVersion, int):
             raise TypeError("sampleVersion must be an integer.")
-        self.sampleInfo = sampleVersion
+        self.sampleVersion = sampleVersion
     

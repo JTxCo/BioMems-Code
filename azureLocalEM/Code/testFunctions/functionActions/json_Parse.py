@@ -3,8 +3,8 @@ import sys
 import datetime
 import ast
 import ujson as json
-sys.path.append('azureLocalEm/Code/Classes')
-
+import os
+sys.path.append('azureLocalEm/Code/testFunctions/Classes')
 
 from table_Patient import Patient
 from table_Device import Device
@@ -126,18 +126,18 @@ def addSample(well_reference_list):
     sample = Sample(well_reference_list)
     return sample
 
-# filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
-# with open(filepath, 'r') as f:
-#     json_data = json.load(f)
-#     data = parse_for_data(json_data)
-#     calibrationSetting = addCalibrationSettings(data)
-#     device = addDevice(data)
-#     patient = addPatient(data)        
-#     test = addTest(data)
-#     cartridge = addCartridge(data)
-#     Fluid_Method = addFluidMethod(data)
-#     testTIme = addTestTime(data)
-    # wellReference_List = addWellReferences(data)
+filepath = 'azureLocalEm/Data/jsonEXAMPLE.json'
+with open(filepath, 'r') as f:
+    json_data = json.load(f)
+    data = parse_for_data(json_data)
+    calibrationSetting = addCalibrationSettings(data)
+    device = addDevice(data)
+    patient = addPatient(data)        
+    test = addTest(data)
+    cartridge = addCartridge(data)
+    Fluid_Method = addFluidMethod(data)
+    testTIme = addTestTime(data)
+    wellReference_List = addWellReferences(data)
 
 
 

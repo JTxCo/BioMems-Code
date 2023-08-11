@@ -1,15 +1,17 @@
 import azure.functions as func
 import logging
-import ujson as json
-import pyodbc
 import sys
+import os
+sys.path.append('azureLocalEm/Code/testFunctions/functionActions')
+# path = "azureLocalEm/Code/testFunctions/functionActions"
+# files = os.listdir(path)
+# print(files)
+# print(sys.path)
 
-sys.path.append('azureLocalEm/Code/functionActions')
-
-
+import db_test_upload
+from db_test_upload import DataInsert
 
 app = func.FunctionApp()
-
 @app.function_name("HttpTrigger1")
 @app.route("hello", methods=["POST"], auth_level=func.AuthLevel.ANONYMOUS)
 def test_function(req: func.HttpRequest) -> func.HttpResponse:
@@ -23,11 +25,9 @@ def test_function(req: func.HttpRequest) -> func.HttpResponse:
                 status_code=400
             )
         
-        # Process the JSON data here as needed
-        # You can access individual fields using json_data['field_name']
         logging.info(f"Received JSON data: {json_data}")
-        for item in json_data['patientInfo']:
-            logging.info(f"Item: {item}")  
+        DataInsert(json_data)
+        logging.info("JSON data processed successfully.")
         return func.HttpResponse("JSON data processed successfully.", status_code=200)
     except Exception as e:
         logging.info("Error processing JSON data.")

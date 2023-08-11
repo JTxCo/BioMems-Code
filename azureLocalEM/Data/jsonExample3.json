@@ -1,0 +1,158 @@
+{
+    "data": {
+      "versionInfo": {
+        "version": "2"
+      },
+      "packetInfo":{
+        "cartridgeInfo":{
+           "GSID":"0000000000018",
+           "assayName":"virusTest2023"
+        },
+        "fluidMethodInfo":{
+           "sampleName":"nasalSwab",
+           "methodName":"asmithMethod1",
+           "eChemName":"viralRNA",
+           "washName":"salineWash",
+           "incubationTime":"3"
+        },
+        "patientInfo":{
+           "patientID":"uvwxyzabcd",
+           "patientName":"Alice Smith",
+           "patientDOB":"1992.10.23"
+        },
+        "dateTime":{
+           "date":"2023.08.11",
+           "time":"15:45:30",
+           "timeZone":"2"
+        },
+        "scanInfo":{
+           "operatorID":"operator456"
+        },
+        "calibrationSettings":{
+           "dacOffset":"0x18",
+           "dacGain":"0x800000",
+           "voltageOffset":"0",
+           "currentOffset":"0",
+           "shunt1Cal":"1000000",
+           "shunt2Cal":"1000000",
+           "shunt3Cal":"1000000",
+           "rangeSelect":"2"
+        },
+        "deviceInfo":{
+           "instrumentID":"3000000000000",
+           "errorServiceCode":"E005S003"
+        }
+     },
+     "algorithmInfo": {
+        "algorithmVersion": "1"
+     },
+     "sampleInfo": {
+        "sampleVersion": "1"
+     },
+     "sampleData": {
+        "well1Data": {
+           "info": {
+              "sampleFormat": "1",
+              "samplesTotal": "6",
+              "wellRange": "500 uA"
+           },
+           "sample": [
+              {
+                 "time": "1000",
+                 "voltageH": "200000",
+                 "currentH": "1000",
+                 "voltageL": "100000",
+                 "currentL": "5000"
+              },
+              {
+                 "time": "2000",
+                 "voltageH": "190000",
+                 "currentH": "2000",
+                 "voltageL": "90000",
+                 "currentL": "4500"
+              },
+              {
+                 "time": "3000",
+                 "voltageH": "180000",
+                 "currentH": "3000",
+                 "voltageL": "80000",
+                 "currentL": "4000"
+              },
+              {
+                 "time": "4000",
+                 "voltageH": "170000",
+                 "currentH": "4000",
+                 "voltageL": "70000",
+                 "currentL": "3500"
+              },
+              {
+                 "time": "5000",
+                 "voltageH": "160000",
+                 "currentH": "5000",
+                 "voltageL": "60000",
+                 "currentL": "3000"
+              },
+              {
+                 "time": "6000",
+                 "voltageH": "150000",
+                 "currentH": "6000",
+                 "voltageL": "50000",
+                 "currentL": "2500"
+              }
+           ]
+        },
+        "well2Data": {
+           "info": {
+              "sampleFormat": "1",
+              "samplesTotal": "6",
+              "wellRange": "500 uA"
+           },
+           "sample": [
+              {
+                 "time": "1000",
+                 "voltageH": "200000",
+                 "currentH": "10000",
+                 "voltageL": "100000",
+                 "currentL": "5000"
+              },
+              {
+                 "time": "2000",
+                 "voltageH": "190000",
+                 "currentH": "11000",
+                 "voltageL": "90000",
+                 "currentL": "4500"
+              },
+              {
+                 "time": "3000",
+                 "voltageH": "180000",
+                 "currentH": "12000",
+                 "voltageL": "80000",
+                 "currentL": "4000"
+              },
+              {
+                 "time": "4000",
+                 "voltageH": "170000",
+                 "currentH": "13000",
+                 "voltageL": "70000",
+                 "currentL": "3500"
+              },
+              {
+                 "time": "5000",
+                 "voltageH": "160000",
+                 "currentH": "14000",
+                 "voltageL": "60000",
+                 "currentL": "3000"
+              },
+              {
+                 "time": "6000",
+                 "voltageH": "150000",
+                 "currentH": "15000",
+                 "voltageL": "50000",
+                 "currentL": "2500"
+              }
+           ]
+        }
+     }
+    }
+  }
+  

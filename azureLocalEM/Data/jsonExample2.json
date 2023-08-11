@@ -1,0 +1,213 @@
+{
+  "data": {
+    "versionInfo": {
+      "version": "1"
+    },
+    "packetInfo": {
+      "cartridgeInfo": {
+        "GSID": "0000000000017",
+        "assayName": "bloodTest2023"
+      },
+      "fluidMethodInfo": {
+        "sampleName": "urine",
+        "methodName": "jdoeMethod1",
+        "eChemName": "glucose",
+        "washName": "waterFlush",
+        "incubationTime": "2"
+      },
+      "patientInfo": {
+        "patientID": "pqrstuvwxy",
+        "patientName": "John Doe",
+        "patientDOB": "1980.05.15"
+      },
+      "dateTime": {
+        "date": "2023.08.11",
+        "time": "12:30:45",
+        "timeZone": "-7"
+      },
+      "scanInfo": {
+        "operatorID": "operator123"
+      },
+      "calibrationSettings": {
+        "dacOffset": "0x15",
+        "dacGain": "0x7FFFFF",
+        "voltageOffset": "0",
+        "currentOffset": "0",
+        "shunt1Cal": "1000000",
+        "shunt2Cal": "1000000",
+        "shunt3Cal": "1000000",
+        "rangeSelect": "1"
+      },
+      "deviceInfo": {
+        "instrumentID": "2000000000000",
+        "errorServiceCode": "E003S001"
+      }
+    },
+    "algorithmInfo": {
+      "algorithmVersion": "2"
+    },
+    "sampleInfo": {
+      "sampleVersion": "1"
+    },
+    "sampleData": {
+      "well1Data": {
+        "info": {
+          "sampleFormat": "1",
+          "samplesTotal": "10",
+          "wellRange": "100 uA"
+        },
+        "sample": [
+          {
+            "time": "1000",
+            "voltageH": "100000",
+            "currentH": "0",
+            "voltageL": "50000",
+            "currentL": "2500"
+          },
+          {
+            "time": "2000",
+            "voltageH": "90000",
+            "currentH": "1000",
+            "voltageL": "45000",
+            "currentL": "2250"
+          },
+          {
+            "time": "3000",
+            "voltageH": "80000",
+            "currentH": "2000",
+            "voltageL": "40000",
+            "currentL": "2000"
+          },
+          {
+            "time": "4000",
+            "voltageH": "70000",
+            "currentH": "3000",
+            "voltageL": "35000",
+            "currentL": "1750"
+          },
+          {
+            "time": "5000",
+            "voltageH": "60000",
+            "currentH": "4000",
+            "voltageL": "30000",
+            "currentL": "1500"
+          },
+          {
+            "time": "6000",
+            "voltageH": "50000",
+            "currentH": "5000",
+            "voltageL": "25000",
+            "currentL": "1250"
+          },
+          {
+            "time": "7000",
+            "voltageH": "40000",
+            "currentH": "6000",
+            "voltageL": "20000",
+            "currentL": "1000"
+          },
+          {
+            "time": "8000",
+            "voltageH": "30000",
+            "currentH": "7000",
+            "voltageL": "15000",
+            "currentL": "750"
+          },
+          {
+            "time": "9000",
+            "voltageH": "20000",
+            "currentH": "8000",
+            "voltageL": "10000",
+            "currentL": "500"
+          },
+          {
+            "time": "10000",
+            "voltageH": "10000",
+            "currentH": "9000",
+            "voltageL": "5000",
+            "currentL": "250"
+          }
+        ]
+      },
+      "well2Data": {
+        "info": {
+          "sampleFormat": "1",
+          "samplesTotal": "10",
+          "wellRange": "100 uA"
+        },
+        "sample": [
+          {
+            "time": "1000",
+            "voltageH": "100000",
+            "currentH": "10000",
+            "voltageL": "50000",
+            "currentL": "2500"
+          },
+          {
+            "time": "2000",
+            "voltageH": "90000",
+            "currentH": "11000",
+            "voltageL": "45000",
+            "currentL": "2250"
+          },
+          {
+            "time": "3000",
+            "voltageH": "80000",
+            "currentH": "12000",
+            "voltageL": "40000",
+            "currentL": "2000"
+          },
+          {
+            "time": "4000",
+            "voltageH": "70000",
+            "currentH": "13000",
+            "voltageL": "35000",
+            "currentL": "1750"
+          },
+          {
+            "time": "5000",
+            "voltageH": "60000",
+            "currentH": "14000",
+            "voltageL": "30000",
+            "currentL": "1500"
+          },
+          {
+            "time": "6000",
+            "voltageH": "50000",
+            "currentH": "15000",
+            "voltageL": "25000",
+            "currentL": "1250"
+          },
+          {
+            "time": "7000",
+            "voltageH": "40000",
+            "currentH": "16000",
+            "voltageL": "20000",
+            "currentL": "1000"
+          },
+          {
+            "time": "8000",
+            "voltageH": "30000",
+            "currentH": "17000",
+            "voltageL": "15000",
+            "currentL": "750"
+          },
+          {
+            "time": "9000",
+            "voltageH": "20000",
+            "currentH": "18000",
+            "voltageL": "10000",
+            "currentL": "500"
+          },
+          {
+            "time": "10000",
+            "voltageH": "10000",
+            "currentH": "19000",
+            "voltageL": "5000",
+            "currentL": "250"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -2,13 +2,7 @@ import requests
 import json
 import os
 
-# data = {
-#   "patientInfo": {
-#     "patientID": "abcdefghijklm",
-#     "patientName": "Leslie Nielsen",
-#     "patientDOB": "1926.02.11"
-#   }
-# }
+
 
 file_path = 'azureLocalEm/Data/jsonEXAMPLE.json'
 with open(file_path, 'r') as f:

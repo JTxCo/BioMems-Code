@@ -1,11 +1,8 @@
-import json
 import sys
-import datetime
-import ast
-import ujson as json
-import pyodbc
+import json
 
-sys.path.append('azureLocalEm/Code/Classes')
+sys.path.append('azureLocalEm/Code/testFunctions/functionActions')
+sys.path.append('azureLocalEm/Code/testFunctions/Classes')
 
 from table_BASE import BaseTable
 from table_Patient import Patient   

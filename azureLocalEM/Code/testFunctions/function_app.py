@@ -2,16 +2,35 @@ import azure.functions as func
 import logging
 import sys
 import os
-sys.path.append('azureLocalEm/Code/testFunctions/functionActions')
-# path = "azureLocalEm/Code/testFunctions/functionActions"
-# files = os.listdir(path)
-# print(files)
-# print(sys.path)
+import json
+import importlib
+from azure.functions import HttpRequest, HttpResponse
 
-# import db_test_upload
-from db_test_upload import DataInsert
+
+
+# Add the parent directory to the system path
+parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+sys.path.append(parent_dir)
+#print the cwd
+current_file_path = os.path.abspath(__file__)
+print(f"current_file_path: {current_file_path}")
+
+# Import db_test_upload
+# from functionActions.db_test_upload import DataInsert
+from functionActions import db_test_upload
+def main():
+    # importlib.reload(db_test_upload)
+    if 'db_test_upload' in globals():
+        print('db_test_upload is in globals')
+    else:
+        print('db_test_upload is not in globals')
+    filepath = os.path.join(parent_dir, 'Data', 'jsonEXAMPLE2.json')
+    # with open(filepath, 'r') as f:
+    #     json_data = json.load(f)
+    #     DataInsert(json_data)
 
 app = func.FunctionApp()
+
 @app.function_name("HttpTrigger1")
 @app.route("hello", methods=["POST"], auth_level=func.AuthLevel.ANONYMOUS)
 def test_function(req: func.HttpRequest) -> func.HttpResponse:
@@ -36,3 +55,4 @@ def test_function(req: func.HttpRequest) -> func.HttpResponse:
             "Error processing JSON data.",
             status_code=500
         )
+# main()

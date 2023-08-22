@@ -12,4 +12,4 @@ DELETE FROM [BIOMEMS-local].[dbo].[Device];
 DELETE FROM [BIOMEMS-local].[dbo].[Calibration_Setting];
 DELETE FROM [BIOMEMS-local].[dbo].[Fluid_Method];
 DELETE FROM [BIOMEMS-local].[dbo].[TestTime];
-EXEC sp_help PatientDevice;
+-- EXEC sp_help PatientDevice;

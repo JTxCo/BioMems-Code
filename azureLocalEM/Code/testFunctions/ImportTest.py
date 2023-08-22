@@ -2,9 +2,14 @@ import os
 import sys
 import json 
 # print(sys.path)
-
 sys.path.append('azureLocalEm/Code/testFunctions/functionActions')
 # print(sys.path)
+
+
+current_file_path = os.path.abspath(__file__)
+print(f"current_file_path: {current_file_path}")
+
+
 
 path = "azureLocalEm/Code/testFunctions/functionActions"
 print(os.listdir(path))

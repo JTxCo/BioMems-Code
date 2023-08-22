@@ -1,6 +1,6 @@
 import sys
 import json
-
+import os
 sys.path.append('azureLocalEm/Code/testFunctions/functionActions')
 sys.path.append('azureLocalEm/Code/testFunctions/Classes')
 
@@ -19,6 +19,11 @@ from table_PatientDevice import PatientDevice
 from table_Sample import Sample
 
 from json_Parse import parse_for_data, addPatient, addDevice, addCalibrationSettings, addFluidMethod, addTestTime, addCalibrationSettings, addCartridge, addTest, addWellData, addWellInfo, addWellReferences, addPatientDevice, addSample
+
+# current_dir = os.path.dirname(os.path.realpath(__file__))
+# print(f"current_dir: {current_dir}")
+
+
 
 def RemoveConstraint(constraint: str, table: str):
     base = BaseTable()

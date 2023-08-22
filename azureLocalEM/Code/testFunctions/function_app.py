@@ -8,7 +8,7 @@ sys.path.append('azureLocalEm/Code/testFunctions/functionActions')
 # print(files)
 # print(sys.path)
 
-import db_test_upload
+# import db_test_upload
 from db_test_upload import DataInsert
 
 app = func.FunctionApp()

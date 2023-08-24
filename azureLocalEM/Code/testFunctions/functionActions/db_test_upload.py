@@ -1,9 +1,18 @@
 import sys
 import json
 import os
+
+
+
+parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+sys.path.append(parent_dir)
+
+current_file_path = os.path.abspath(__file__)
+relative_path = os.path.join(os.path.dirname(__file__), '../Classes')
+sys.path.append(relative_path)
 sys.path.append('azureLocalEm/Code/testFunctions/functionActions')
 sys.path.append('azureLocalEm/Code/testFunctions/Classes')
-
+from Classes.table_BASE import BaseTable
 from table_BASE import BaseTable
 from table_Patient import Patient   
 from table_Device import Device
@@ -18,7 +27,7 @@ from table_Well_Reference import Well_Reference
 from table_PatientDevice import PatientDevice
 from table_Sample import Sample
 
-from json_Parse import parse_for_data, addPatient, addDevice, addCalibrationSettings, addFluidMethod, addTestTime, addCalibrationSettings, addCartridge, addTest, addWellData, addWellInfo, addWellReferences, addPatientDevice, addSample
+from functionActions.json_Parse import parse_for_data, addPatient, addDevice, addCalibrationSettings, addFluidMethod, addTestTime, addCalibrationSettings, addCartridge, addTest, addWellData, addWellInfo, addWellReferences, addPatientDevice, addSample
 
 # current_dir = os.path.dirname(os.path.realpath(__file__))
 # print(f"current_dir: {current_dir}")
@@ -193,11 +202,11 @@ def DataInsert(json_data):
         print("Cartridge inserted")
         well_info = well_reference_list[0].well_list_info_data[0]
         well_info_ID = Well_Info_Insert(well_info, well_reference_ID)
-        print(well_info_ID)
+        print("well info id: " + str(well_info_ID))
         well_data = well_reference_list[0].well_list_info_data[1]
         # print(well_data.well_data)
         well_data_ID = Well_Data_Insert(well_data, well_reference_ID)
-        print(well_data_ID)
+        print("well data id: " + str(well_data_ID))
         
     except Exception as e:
         print("Failed with exception: " + str(e)) 

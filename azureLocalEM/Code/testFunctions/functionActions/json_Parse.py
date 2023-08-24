@@ -1,10 +1,12 @@
-import json
+# import json
 import sys
 import datetime
+import os
 import ast
 import ujson as json
-import os
 sys.path.append('azureLocalEm/Code/testFunctions/Classes')
+relative_path = os.path.join(os.path.dirname(__file__), '../Classes')
+sys.path.append(relative_path)
 
 from table_Patient import Patient
 from table_Device import Device
@@ -22,8 +24,11 @@ from table_Sample import Sample
 def parse_for_data(json_data):
     # for item in json_data["data"]["patientInfo"]:
         # print(f"Item: {item}")
+    print("we are here before error ")
     if "data" in json_data:
+        print("we are here after error ")
         data = json_data["data"]
+        print("reuturning data")
         return data
        
 def addPatient(data): 

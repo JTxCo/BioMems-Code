@@ -11,23 +11,20 @@ from azure.functions import HttpRequest, HttpResponse
 # Add the parent directory to the system path
 parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 sys.path.append(parent_dir)
-#print the cwd
-current_file_path = os.path.abspath(__file__)
-print(f"current_file_path: {current_file_path}")
 
 # Import db_test_upload
-# from functionActions.db_test_upload import DataInsert
 from functionActions import db_test_upload
+from functionActions.db_test_upload import DataInsert
 def main():
-    # importlib.reload(db_test_upload)
+    importlib.reload(db_test_upload)
     if 'db_test_upload' in globals():
         print('db_test_upload is in globals')
     else:
         print('db_test_upload is not in globals')
-    filepath = os.path.join(parent_dir, 'Data', 'jsonEXAMPLE2.json')
-    # with open(filepath, 'r') as f:
-    #     json_data = json.load(f)
-    #     DataInsert(json_data)
+    filepath = os.path.join(parent_dir, 'Data', 'jsonEXAMPLE.json')
+    with open(filepath, 'r') as f:
+        json_data = json.load(f)
+        DataInsert(json_data)
 
 app = func.FunctionApp()
 
@@ -55,4 +52,4 @@ def test_function(req: func.HttpRequest) -> func.HttpResponse:
             "Error processing JSON data.",
             status_code=500
         )
-# main()
+main()

@@ -1,9 +1,18 @@
 import sys
 import json
 import os
+
+
+
+parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+sys.path.append(parent_dir)
+
+current_file_path = os.path.abspath(__file__)
+relative_path = os.path.join(os.path.dirname(__file__), '../Classes')
+sys.path.append(relative_path)
 sys.path.append('azureLocalEm/Code/testFunctions/functionActions')
 sys.path.append('azureLocalEm/Code/testFunctions/Classes')
-
+from Classes.table_BASE import BaseTable
 from table_BASE import BaseTable
 from table_Patient import Patient   
 from table_Device import Device
@@ -18,7 +27,7 @@ from table_Well_Reference import Well_Reference
 from table_PatientDevice import PatientDevice
 from table_Sample import Sample
 
-from json_Parse import parse_for_data, addPatient, addDevice, addCalibrationSettings, addFluidMethod, addTestTime, addCalibrationSettings, addCartridge, addTest, addWellData, addWellInfo, addWellReferences, addPatientDevice, addSample
+from functionActions.json_Parse import parse_for_data, addPatient, addDevice, addCalibrationSettings, addFluidMethod, addTestTime, addCalibrationSettings, addCartridge, addTest, addWellData, addWellInfo, addWellReferences, addPatientDevice, addSample
 
 # current_dir = os.path.dirname(os.path.realpath(__file__))
 # print(f"current_dir: {current_dir}")

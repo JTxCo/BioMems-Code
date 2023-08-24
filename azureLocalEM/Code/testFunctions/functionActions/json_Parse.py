@@ -1,10 +1,10 @@
 import json
 import sys
 import datetime
-import ast
-import ujson as json
 import os
 sys.path.append('azureLocalEm/Code/testFunctions/Classes')
+relative_path = os.path.join(os.path.dirname(__file__), '../Classes')
+sys.path.append(relative_path)
 
 from table_Patient import Patient
 from table_Device import Device

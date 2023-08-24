@@ -15,7 +15,20 @@ sys.path.append(parent_dir)
 # Import db_test_upload
 from functionActions import db_test_upload
 from functionActions.db_test_upload import DataInsert
+<<<<<<< HEAD
 
+=======
+def main():
+    importlib.reload(db_test_upload)
+    if 'db_test_upload' in globals():
+        print('db_test_upload is in globals')
+    else:
+        print('db_test_upload is not in globals')
+    filepath = os.path.join(parent_dir, 'Data', 'jsonEXAMPLE.json')
+    with open(filepath, 'r') as f:
+        json_data = json.load(f)
+        DataInsert(json_data)
+>>>>>>> azurefunctions_helperfunctions
 
 app = func.FunctionApp()
 
@@ -43,4 +56,9 @@ def test_function(req: func.HttpRequest) -> func.HttpResponse:
         return func.HttpResponse(
             "Error processing JSON data.",
             status_code=500
+<<<<<<< HEAD
         )
+=======
+        )
+main()
+>>>>>>> azurefunctions_helperfunctions

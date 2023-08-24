@@ -2,8 +2,11 @@
 import sys
 import datetime
 import os
+<<<<<<< HEAD
 import ast
 import ujson as json
+=======
+>>>>>>> azurefunctions_helperfunctions
 sys.path.append('azureLocalEm/Code/testFunctions/Classes')
 relative_path = os.path.join(os.path.dirname(__file__), '../Classes')
 sys.path.append(relative_path)

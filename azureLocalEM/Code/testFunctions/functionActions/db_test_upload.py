@@ -1,7 +1,7 @@
 import sys
 import json
 import os
-
+import logging
 
 
 parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
@@ -209,4 +209,5 @@ def DataInsert(json_data):
         print("well data id: " + str(well_data_ID))
         
     except Exception as e:
-        print("Failed with exception: " + str(e)) 
+        logging.info("Failed in data insert.")
+        raise

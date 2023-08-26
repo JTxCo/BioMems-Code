@@ -1,0 +1,9 @@
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/DatabaseProjectBIOMEMS-Azure-1/bin/Debug/DatabaseProjectBIOMEMS-Azure-1.dacpac
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/DatabaseProjectBIOMEMS-Azure-1/bin/Debug/DatabaseProjectBIOMEMS-Azure-1.dll
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/DatabaseProjectBIOMEMS-Azure-1/bin/Debug/DatabaseProjectBIOMEMS-Azure-1.pdb
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/DatabaseProjectBIOMEMS-Azure-1/obj/Debug/Model.xml
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/DatabaseProjectBIOMEMS-Azure-1/obj/Debug/refactor.xml
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/DatabaseProjectBIOMEMS-Azure-1/obj/Debug/postdeploy.sql
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/DatabaseProjectBIOMEMS-Azure-1/obj/Debug/predeploy.sql
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/DatabaseProjectBIOMEMS-Azure-1/obj/Debug/DatabaseProjectBIOMEMS-Azure-1.dll
+/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/DatabaseProjectBIOMEMS-Azure-1/obj/Debug/DatabaseProjectBIOMEMS-Azure-1.pdb

@@ -1,0 +1,50 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/DatabaseProjectBIOMEMS-Azure-1/DatabaseProjectBIOMEMS-Azure-1.sqlproj": {}
+  },
+  "projects": {
+    "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/DatabaseProjectBIOMEMS-Azure-1/DatabaseProjectBIOMEMS-Azure-1.sqlproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/DatabaseProjectBIOMEMS-Azure-1/DatabaseProjectBIOMEMS-Azure-1.sqlproj",
+        "projectName": "DatabaseProjectBIOMEMS-Azure-1",
+        "projectPath": "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/DatabaseProjectBIOMEMS-Azure-1/DatabaseProjectBIOMEMS-Azure-1.sqlproj",
+        "packagesPath": "/Users/joelcarlson/.nuget/packages/",
+        "outputPath": "/Users/joelcarlson/Library/Mobile Documents/com~apple~CloudDocs/BioMems-Code/azureLocalEM/Data/DB-stuff/DatabaseProjectBIOMEMS-Azure-1/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/joelcarlson/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net46"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net46": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU5128"
+          ]
+        }
+      },
+      "frameworks": {
+        "net46": {
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@ import sys
 import os
 import json
 import importlib
+import pyodbc
 from azure.functions import HttpRequest, HttpResponse
 
 
@@ -15,20 +16,6 @@ sys.path.append(parent_dir)
 # Import db_test_upload
 from functionActions import db_test_upload
 from functionActions.db_test_upload import DataInsert
-<<<<<<< HEAD
-
-=======
-def main():
-    importlib.reload(db_test_upload)
-    if 'db_test_upload' in globals():
-        print('db_test_upload is in globals')
-    else:
-        print('db_test_upload is not in globals')
-    filepath = os.path.join(parent_dir, 'Data', 'jsonEXAMPLE.json')
-    with open(filepath, 'r') as f:
-        json_data = json.load(f)
-        DataInsert(json_data)
->>>>>>> azurefunctions_helperfunctions
 
 app = func.FunctionApp()
 
@@ -46,19 +33,29 @@ def test_function(req: func.HttpRequest) -> func.HttpResponse:
             )
         
         # logging.info(f"Received JSON data: {json_data}")
-        print(f"Received type of data: {type(json_data)}")
         DataInsert(json_data)
-        logging.info("JSON data processed successfully.")
-        return func.HttpResponse("JSON data processed successfully.", status_code=200)
+    except pyodbc.IntegrityError as e:
+        logging.info("duplicate entry error in the database" )
+        logging.error(str(e))
+        return func.HttpResponse(
+            "failed: duplicate entry error in the database",
+            status_code=409
+        )
+    except pyodbc.DatabaseError as e:
+        logging.info("Database error.")
+        error_message = str(e)
+        if "Violation of PRIMARY KEY" in error_message:
+            logging.info("Duplicate entry error in the database.")
+            logging.error(str(e))
+            return func.HttpResponse(
+                "Failed: Duplicate entry error in the database",
+                status_code=409
+            )
     except Exception as e:
         logging.info("Error processing JSON data.")
         logging.error(str(e))
         return func.HttpResponse(
             "Error processing JSON data.",
             status_code=500
-<<<<<<< HEAD
         )
-=======
-        )
-main()
->>>>>>> azurefunctions_helperfunctions
+    return func.HttpResponse("JSON data processed successfully.", status_code=200)

@@ -2,11 +2,8 @@
 import sys
 import datetime
 import os
-<<<<<<< HEAD
 import ast
 import ujson as json
-=======
->>>>>>> azurefunctions_helperfunctions
 sys.path.append('azureLocalEm/Code/testFunctions/Classes')
 relative_path = os.path.join(os.path.dirname(__file__), '../Classes')
 sys.path.append(relative_path)
@@ -25,13 +22,8 @@ from table_PatientDevice import PatientDevice
 from table_Sample import Sample
 
 def parse_for_data(json_data):
-    # for item in json_data["data"]["patientInfo"]:
-        # print(f"Item: {item}")
-    print("we are here before error ")
     if "data" in json_data:
-        print("we are here after error ")
         data = json_data["data"]
-        print("reuturning data")
         return data
        
 def addPatient(data): 
@@ -58,7 +50,6 @@ def addDevice(data):
     GSID = cartirdgeInfo["GSID"]
     device = Device(instrumentID, errorServiceCode, GSID)
     return device
-    # def addDevice
 
 def addCalibrationSettings(data):
     calibrationSettings_str = data["packetInfo"]["calibrationSettings"]

@@ -9,5 +9,8 @@
     "azureFunctions.projectSubpath": "azureLocalEM/Code/testFunctions",
     "python.analysis.extraPaths": [
         "./azureLocalEM/Code/Classes"
+    ],
+    "dataworkspace.excludedProjects": [
+        "azureLocalEM/Data/azureLocalTEST.sqlproj"
     ]
 }

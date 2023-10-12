@@ -4,7 +4,8 @@ import os
 
 
 
-file_path = 'azureLocalEm/Data/jsonEXAMPLE2.json'
+
+file_path = 'azureLocalEm/Data/jsonEXAMPLE.json'
 with open(file_path, 'r') as f:
     json_data = f.read()
     headers = {'Content-Type': 'application/json'}

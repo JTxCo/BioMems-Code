@@ -2,21 +2,42 @@ import pyodbc
 import datetime
 class BaseTable():
     def __init__(self) -> None:
-        self.server_name = "localhost"
-        self.database_name = "BIOMEMS-local"
-        self.user_id = "sa"
-        self.password = "P@ssword"
-        self.conn_str = (
+        self.local_server_name = "localhost"
+        self.cloud_server_name = "tcp:biomems-azure-1.database.windows.net,1433;"
+        
+        self.local_database_name = "BIOMEMS-local"
+        self.cloud_database_name = "BIOMEMS-Azure-1"
+        
+        self.local_user_id = "sa"
+        self.cloud_user_id = "BIOMEMS-admin"
+        
+        self.local_password = "P@ssword"
+        self.cloud_password = "BIOP@sswordMEM"
+        
+        self.local_conn_str = (
             f"Driver={{ODBC Driver 17 for SQL Server}};"
-            f"Server={self.server_name};"
-            f"Database={self.database_name};"
-            f"UID={self.user_id};"
-            f"PWD={self.password};"
+            f"Server={self.local_server_name};"
+            f"Database={self.local_database_name};"
+            f"UID={self.local_user_id};"
+            f"PWD={self.local_password};"
+        )
+        self.cloud_conn_str =(
+            f"Driver={{ODBC Driver 17 for SQL Server}};"
+            f"Server=tcp:biomems-azure-1.database.windows.net,1433;"
+            f"Database=BIOMEMS-Azure-1;"
+            f"Uid=BIOMEMS-admin;"
+            f"Pwd={self.cloud_password};"
+            f"Encrypt=yes;"
+            f"TrustServerCertificate=no;"
+            f"Connection Timeout=30;"
         )
         self.conn = None
         self.cursor = None 
-    def connect(self):
-        self.conn = pyodbc.connect(self.conn_str)
+    def connect(self, database_type='cloud'):
+        if database_type == 'cloud':
+            self.conn = pyodbc.connect(self.cloud_conn_str)
+        else:
+            self.conn = pyodbc.connect(self.local_conn_str)
     
     def execute(self, query):
         self.cursor = self.conn.cursor()
